@@ -14,27 +14,36 @@
         }
 
         :root {
-            --primary: #0a0a0a;
-            --secondary: #1a1a1a;
-            --dark-1: #0d0d0d;
-            --dark-2: #151515;
-            --dark-3: #1c1c1c;
-            --dark-4: #242424;
-            --accent: #FFD700;
-            --accent-orange: #FFA500;
-            --text-light: #fff;
-            --text-dark: #0a0a0a;
-            --bg-dark: #0d0d0d;
-            --bg-light: #f5f5f5;
-            --shadow: 0 0 30px rgba(255, 215, 0, 0.2);
-            --gradient: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
-            --gradient-dark: linear-gradient(135deg, rgba(20, 20, 20, 0.95) 0%, rgba(40, 40, 40, 0.9) 100%);
+            /* Tema Light - Cores Principais */
+            --primary: #ffffff;
+            --secondary: #f8f9fa;
+            --light-1: #ffffff;
+            --light-2: #f5f7fa;
+            --light-3: #e9ecef;
+            --light-4: #dee2e6;
+            --accent: #113242;
+            --accent-dark: #0a1f2b;
+            --accent-light: #1a4a5f;
+            --text-dark: #1e3a4a;
+            --text-medium: #4a6779;
+            --text-light: #7a8f9e;
+            --bg-light: #f5f8fa;
+            --bg-white: #ffffff;
+            --shadow: 0 2px 15px rgba(17, 50, 66, 0.08);
+            --shadow-strong: 0 4px 25px rgba(17, 50, 66, 0.12);
+            --gradient: linear-gradient(135deg, #113242 0%, #0a1f2b 100%);
+            --gradient-light: linear-gradient(135deg, #e8f4f8 0%, #d4e9f0 100%);
+            --border-color: #d0dce3;
+            --success: #4CAF50;
+            --warning: #F59E0B;
+            --danger: #EF4444;
+            --info: #3B82F6;
         }
 
         body {
             font-family: 'Courier New', monospace;
-            background: var(--bg-dark);
-            color: var(--text-light);
+            background: var(--bg-light);
+            color: var(--text-dark);
             line-height: 1.6;
             position: relative;
             overflow-x: hidden;
@@ -47,9 +56,9 @@
             width: 100%;
             height: 100%;
             background-image: 
-                linear-gradient(30deg, transparent 48%, rgba(255, 215, 0, 0.03) 50%, transparent 52%),
-                linear-gradient(90deg, transparent 48%, rgba(255, 215, 0, 0.03) 50%, transparent 52%),
-                linear-gradient(150deg, transparent 48%, rgba(255, 215, 0, 0.03) 50%, transparent 52%);
+                linear-gradient(30deg, transparent 48%, rgba(17, 50, 66, 0.04) 50%, transparent 52%),
+                linear-gradient(90deg, transparent 48%, rgba(17, 50, 66, 0.04) 50%, transparent 52%),
+                linear-gradient(150deg, transparent 48%, rgba(17, 50, 66, 0.04) 50%, transparent 52%);
             background-size: 80px 80px;
             animation: gridPulse 8s ease-in-out infinite;
             pointer-events: none;
@@ -57,18 +66,18 @@
         }
 
         @keyframes gridPulse {
-            0%, 100% { opacity: 0.3; }
-            50% { opacity: 0.6; }
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 0.8; }
         }
 
         /* Header */
         .header {
-            background: rgba(0, 0, 0, 0.95);
+            background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
-            border-bottom: 2px solid rgba(255, 215, 0, 0.3);
-            color: var(--text-light);
+            border-bottom: 2px solid var(--accent);
+            color: var(--text-dark);
             padding: 1rem 0;
-            box-shadow: 0 0 50px rgba(255, 215, 0, 0.2);
+            box-shadow: var(--shadow-strong);
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -123,27 +132,27 @@
             width: 80px;
             height: 80px;
             clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-orange) 100%);
+            background: var(--gradient);
             display: flex;
             align-items: center;
             justify-content: center;
             border: 3px solid var(--accent);
             box-shadow: 
-                0 0 30px rgba(255, 215, 0, 0.6),
-                inset 0 0 20px rgba(255, 255, 255, 0.1);
+                0 4px 20px rgba(17, 50, 66, 0.3),
+                inset 0 0 20px rgba(255, 255, 255, 0.3);
             padding: 0.5rem;
             transition: all 0.3s ease;
         }
 
         .logo-hexagon:hover {
             transform: scale(1.1) rotate(180deg);
-            box-shadow: 0 0 40px rgba(255, 215, 0, 0.8);
+            box-shadow: 0 6px 30px rgba(17, 50, 66, 0.5);
         }
 
         .logo-hexagon img {
             width: 50px;
             height: 50px;
-            filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
+            filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.15));
             transition: all 0.3s ease;
         }
 
@@ -158,7 +167,7 @@
             color: var(--accent);
             text-transform: uppercase;
             letter-spacing: 2px;
-            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+            text-shadow: 0 2px 4px rgba(17, 50, 66, 0.2);
             transition: all 0.3s ease;
         }
 
@@ -171,8 +180,8 @@
         }
 
         .logo-link:hover .logo-text {
-            color: #FFA500;
-            text-shadow: 0 0 15px rgba(255, 165, 0, 0.8);
+            color: var(--accent-dark);
+            text-shadow: 0 2px 8px rgba(10, 31, 43, 0.4);
         }
 
         .logo-dropdown {
@@ -182,7 +191,7 @@
         .logo-dropdown hr {
             margin: 0.5rem 0;
             border: none;
-            border-top: 1px solid rgba(255, 215, 0, 0.2);
+            border-top: 1px solid var(--border-color);
         }
 
         .nav {
@@ -194,7 +203,7 @@
         .nav-left a,
         .nav-right a,
         .nav-item > a:not(.logo-link) {
-            color: rgba(255, 255, 255, 0.8);
+            color: var(--text-medium);
             text-decoration: none;
             font-weight: 600;
             transition: all 0.3s ease;
@@ -229,7 +238,7 @@
         .nav-item > a:not(.logo-link):hover {
             color: var(--accent);
             border-color: var(--accent);
-            background: rgba(255, 215, 0, 0.1);
+            background: rgba(17, 50, 66, 0.1);
             transform: translateY(-2px);
         }
 
@@ -248,8 +257,8 @@
             top: 100%;
             left: 50%;
             transform: translateX(-50%) translateY(-10px);
-            background: rgba(0, 0, 0, 0.98);
-            border: 2px solid rgba(255, 215, 0, 0.3);
+            background: rgba(255, 255, 255, 0.98);
+            border: 2px solid var(--accent);
             clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
             min-width: 200px;
             padding: 0.5rem 0;
@@ -257,7 +266,7 @@
             visibility: hidden;
             transition: all 0.3s ease;
             z-index: 2000;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.9);
+            box-shadow: var(--shadow-strong);
             margin-top: 0.5rem;
         }
 
@@ -273,7 +282,7 @@
             align-items: center;
             gap: 0.5rem;
             padding: 0.7rem 1.2rem;
-            color: rgba(255, 255, 255, 0.8);
+            color: var(--text-medium);
             text-decoration: none;
             font-size: 0.75rem;
             text-transform: uppercase;
@@ -284,7 +293,7 @@
         }
 
         .dropdown-menu a:hover {
-            background: rgba(255, 215, 0, 0.1);
+            background: rgba(17, 50, 66, 0.1);
             color: var(--accent);
             border-left-color: var(--accent);
             padding-left: 1.5rem;
@@ -300,9 +309,210 @@
             content: none;
         }
 
+        /* Mobile Menu Hamburger - Versão Simples */
+        .mobile-menu-toggle {
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 40px;
+            height: 32px;
+            background: rgba(255, 255, 255, 0.95);
+            border: 2px solid var(--accent);
+            border-radius: 5px;
+            cursor: pointer;
+            padding: 6px;
+            z-index: 1003;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu-toggle:active {
+            transform: scale(0.95);
+        }
+
+        .mobile-menu-toggle span {
+            display: block;
+            width: 100%;
+            height: 4px;
+            background: var(--accent);
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(8px, 8px);
+        }
+
+        .mobile-menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+            transform: translateX(-20px);
+        }
+
+        .mobile-menu-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(8px, -8px);
+        }
+
+        /* Mobile Menu Overlay */
+        .mobile-menu-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: rgba(248, 249, 250, 0.9);
+            z-index: 1001;
+            transition: opacity 0.3s ease;
+        }
+
+        .mobile-menu-overlay.active {
+            display: block;
+        }
+
+        /* Mobile Side Menu */
+        .mobile-side-menu {
+            position: fixed;
+            top: 0;
+            left: -100%;
+            width: 280px;
+            height: 100vh;
+            background: var(--bg-white);
+            border-right: 2px solid var(--accent);
+            z-index: 1002;
+            transition: left 0.3s ease;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .mobile-side-menu.active {
+            left: 0;
+        }
+
+        /* Scrollbar do menu mobile */
+        .mobile-side-menu::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .mobile-side-menu::-webkit-scrollbar-track {
+            background: var(--light-3);
+        }
+
+        .mobile-side-menu::-webkit-scrollbar-thumb {
+            background: var(--accent);
+            border-radius: 3px;
+        }
+
+        .mobile-menu-header {
+            padding: 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+            text-align: center;
+        }
+
+        .mobile-menu-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.8rem;
+        }
+
+        .mobile-menu-logo-img {
+            width: 40px;
+            height: 40px;
+        }
+
+        .mobile-menu-logo-text {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--accent);
+        }
+
+        .mobile-nav-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .mobile-nav-item {
+            border-bottom: 1px solid var(--light-3);
+        }
+
+        .mobile-nav-link {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            padding: 1rem 1.5rem;
+            color: var(--text-dark);
+            text-decoration: none;
+            transition: background 0.3s ease;
+            position: relative;
+        }
+
+        .mobile-nav-link:hover {
+            background: rgba(17, 50, 66, 0.1);
+        }
+
+        .mobile-nav-link i.fas:not(.mobile-nav-arrow) {
+            color: var(--accent);
+            width: 20px;
+            text-align: center;
+            flex-shrink: 0;
+        }
+
+        .mobile-nav-arrow {
+            color: var(--accent);
+            font-size: 0.8rem;
+            transition: transform 0.3s ease;
+            margin-left: auto;
+        }
+
+        .mobile-submenu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-in-out;
+            background: var(--light-2);
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .mobile-submenu.active {
+            max-height: 600px;
+        }
+
+        .mobile-submenu-item {
+            border-bottom: 1px solid var(--light-3);
+        }
+
+        .mobile-submenu-item:last-child {
+            border-bottom: none;
+        }
+
+        .mobile-submenu-link {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            padding: 0.8rem 1.5rem 0.8rem 3rem;
+            color: var(--text-medium);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        .mobile-submenu-link:hover {
+            background: rgba(17, 50, 66, 0.15);
+            color: var(--accent);
+        }
+
+        .mobile-submenu-link i {
+            color: var(--accent);
+            font-size: 0.9rem;
+            width: 18px;
+            text-align: center;
+            flex-shrink: 0;
+        }
+
         /* Hero Section */
         .profile-hero {
-            background: linear-gradient(135deg, var(--dark-2) 0%, var(--dark-4) 100%);
+            background: #1f4558;
             padding: 4rem 2rem;
             position: relative;
             overflow: hidden;
@@ -316,12 +526,12 @@
             left: 0;
             width: 100%;
             height: 4px;
-            background: linear-gradient(90deg, transparent, var(--accent), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
             animation: scanHorizontal 3s linear infinite;
         }
 
         @keyframes scanHorizontal {
-            0%, 100% { opacity: 0; }
+            0%, 100% { opacity: 0.3; }
             50% { opacity: 1; }
         }
 
@@ -333,15 +543,13 @@
         }
 
         .profile-card {
-            background: rgba(0, 0, 0, 0.85);
+            background: rgba(255, 255, 255, 0.98);
             backdrop-filter: blur(15px);
-            border: 2px solid rgba(255, 215, 0, 0.3);
+            border: 2px solid rgba(255, 255, 255, 0.3);
             border-left: 4px solid var(--accent);
             clip-path: polygon(0 0, calc(100% - 30px) 0, 100% 30px, 100% 100%, 30px 100%, 0 calc(100% - 30px));
             padding: 3rem;
-            box-shadow: 
-                0 0 50px rgba(255, 215, 0, 0.2),
-                inset 0 0 50px rgba(255, 215, 0, 0.05);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
             display: grid;
             grid-template-columns: auto 1fr auto;
             gap: 2rem;
@@ -361,9 +569,8 @@
             background-image: url('https://i.imgur.com/og5u7RZ.jpeg');
             background-size: 154%;
             background-position: center;
-            filter: blur(8px) brightness(0.3);
+            filter: blur(8px) brightness(1.3) saturate(0.8) opacity(0.15);
             z-index: 0;
-            opacity: 0.6;
         }
 
         .profile-card > * {
@@ -378,15 +585,15 @@
             right: 0;
             width: 200px;
             height: 200px;
-            background: radial-gradient(circle, rgba(255, 215, 0, 0.1) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(17, 50, 66, 0.1) 0%, transparent 70%);
             pointer-events: none;
             z-index: 1;
         }
 
         .profile-card:hover {
             box-shadow: 
-                0 0 60px rgba(255, 215, 0, 0.3),
-                inset 0 0 60px rgba(255, 215, 0, 0.08);
+                0 0 60px rgba(17, 50, 66, 0.3),
+                inset 0 0 60px rgba(17, 50, 66, 0.08);
         }
 
         .avatar-section {
@@ -400,9 +607,9 @@
             clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
             border: 4px solid var(--accent);
             box-shadow: 
-                0 0 30px rgba(255, 215, 0, 0.6),
-                inset 0 0 30px rgba(255, 255, 255, 0.1);
-            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-orange) 100%);
+                0 4px 20px rgba(17, 50, 66, 0.3),
+                inset 0 2px 10px rgba(255, 255, 255, 0.2);
+            background: var(--gradient);
             position: relative;
             overflow: hidden;
             animation: rotate3d 6s linear infinite;
@@ -423,7 +630,7 @@
             position: absolute;
             bottom: 10px;
             right: 10px;
-            background: #4CAF50;
+            background: var(--success);
             color: white;
             padding: 0.4rem 0.8rem;
             border-radius: 20px;
@@ -432,7 +639,7 @@
             display: flex;
             align-items: center;
             gap: 0.3rem;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 2px 8px rgba(76, 175, 80, 0.4);
         }
 
         .status-dot {
@@ -460,21 +667,64 @@
             display: flex;
             align-items: center;
             gap: 1rem;
-            text-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+            text-shadow: 0 2px 4px rgba(17, 50, 66, 0.15);
             text-transform: uppercase;
             letter-spacing: 2px;
+            flex-wrap: wrap;
+        }
+
+        .profile-tag {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--accent);
+            background: rgba(17, 50, 66, 0.1);
+            border: 2px solid rgba(17, 50, 66, 0.4);
+            padding: 0.3rem 0.8rem;
+            border-radius: 6px;
+            letter-spacing: 1px;
+            text-shadow: 0 1px 2px rgba(17, 50, 66, 0.08);
+            box-shadow: 
+                0 0 15px rgba(17, 50, 66, 0.2),
+                inset 0 0 10px rgba(17, 50, 66, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .profile-tag::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(17, 50, 66, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .profile-tag:hover::before {
+            left: 100%;
+        }
+
+        .profile-tag:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+            box-shadow: 
+                0 0 25px rgba(17, 50, 66, 0.4),
+                inset 0 0 15px rgba(17, 50, 66, 0.15);
+            transform: translateY(-2px);
         }
 
         .rank-badge {
             background: var(--gradient);
-            color: #000;
+            color: white;
             padding: 0.6rem 1.2rem;
             clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
             font-size: 0.9rem;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 2px;
-            box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+            box-shadow: 0 0 20px rgba(17, 50, 66, 0.5);
         }
 
         .profile-stats {
@@ -485,9 +735,9 @@
         }
 
         .stat-item {
-            background: rgba(0, 0, 0, 0.5);
+            background: rgba(248, 249, 250, 0.95);
             padding: 1rem;
-            border: 1px solid rgba(255, 215, 0, 0.2);
+            border: 1px solid rgba(17, 50, 66, 0.2);
             border-left: 3px solid var(--accent);
             clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%);
             transition: all 0.3s ease;
@@ -502,7 +752,7 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.1), transparent);
+            background: linear-gradient(90deg, transparent, rgba(17, 50, 66, 0.1), transparent);
             transition: left 0.5s;
         }
 
@@ -513,13 +763,13 @@
         .stat-item:hover {
             transform: translateY(-3px);
             border-color: var(--accent);
-            box-shadow: 0 8px 16px rgba(255, 215, 0, 0.3);
-            background: rgba(0, 0, 0, 0.7);
+            box-shadow: 0 8px 16px rgba(17, 50, 66, 0.3);
+            background: rgba(255, 255, 255, 0.9);
         }
 
         .stat-label {
             font-size: 0.75rem;
-            color: rgba(255, 255, 255, 0.6);
+            color: var(--text-medium);
             text-transform: uppercase;
             letter-spacing: 1px;
             font-weight: 700;
@@ -530,7 +780,7 @@
             font-weight: 700;
             color: var(--accent);
             margin-top: 0.3rem;
-            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+            text-shadow: 0 1px 2px rgba(17, 50, 66, 0.08);
         }
 
         .profile-actions {
@@ -556,8 +806,8 @@
 
         .btn-primary {
             background: var(--gradient);
-            color: #000;
-            box-shadow: 0 4px 12px rgba(255, 215, 0, 0.4);
+            color: white;
+            box-shadow: 0 4px 12px rgba(17, 50, 66, 0.4);
             clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px));
             font-weight: 700;
             text-transform: uppercase;
@@ -583,7 +833,7 @@
 
         .btn-primary:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(255, 215, 0, 0.6);
+            box-shadow: 0 6px 20px rgba(17, 50, 66, 0.6);
         }
 
         .btn-secondary {
@@ -597,17 +847,17 @@
         }
 
         .btn-secondary:hover {
-            background: rgba(255, 215, 0, 0.1);
+            background: rgba(17, 50, 66, 0.1);
             transform: translateY(-2px);
-            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+            box-shadow: 0 4px 15px rgba(17, 50, 66, 0.3);
         }
 
         /* Search Box */
         .search-container {
             margin-bottom: 2rem;
             padding: 1.5rem;
-            background: linear-gradient(135deg, var(--dark-2) 0%, var(--dark-3) 100%);
-            border: 2px solid rgba(255, 215, 0, 0.2);
+            background: var(--gradient-light);
+            border: 2px solid rgba(17, 50, 66, 0.2);
             backdrop-filter: blur(10px);
             box-shadow: var(--shadow);
             clip-path: polygon(0 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%);
@@ -622,7 +872,7 @@
 
         .search-icon {
             position: absolute;
-            left: 1.2rem;
+            right: 16rem;
             color: var(--accent);
             font-size: 1.1rem;
             z-index: 1;
@@ -631,10 +881,10 @@
 
         .search-input {
             flex: 1;
-            padding: 1rem 1rem 1rem 3rem;
-            background: rgba(0, 0, 0, 0.4);
-            border: 2px solid rgba(255, 215, 0, 0.3);
-            color: #fff;
+            padding: 1rem 3rem 1rem 1rem;
+            background: rgba(248, 249, 250, 0.9);
+            border: 2px solid rgba(17, 50, 66, 0.3);
+            color: var(--text-dark);
             font-size: 1rem;
             font-weight: 600;
             transition: all 0.3s ease;
@@ -643,7 +893,7 @@
         }
 
         .search-input::placeholder {
-            color: rgba(255, 255, 255, 0.5);
+            color: var(--text-light);
             text-transform: uppercase;
             font-size: 0.85rem;
             letter-spacing: 1px;
@@ -652,15 +902,15 @@
         .search-input:focus {
             outline: none;
             border-color: var(--accent);
-            background: rgba(0, 0, 0, 0.6);
-            box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 0 10px rgba(17, 50, 66, 0.15);
         }
 
         .search-btn {
             padding: 1rem 2rem;
             background: var(--gradient);
             border: 2px solid var(--accent);
-            color: #000;
+            color: var(--text-dark);
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -670,13 +920,13 @@
             display: flex;
             align-items: center;
             gap: 0.5rem;
-            box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
+            box-shadow: 0 0 8px rgba(17, 50, 66, 0.2);
         }
 
         .search-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 0 25px rgba(255, 215, 0, 0.6);
-            background: linear-gradient(135deg, #FFA500 0%, #FFD700 100%);
+            box-shadow: 0 0 12px rgba(17, 50, 66, 0.3);
+            background: linear-gradient(135deg, var(--accent-dark) 0%, var(--accent) 100%);
         }
 
         .search-btn:active {
@@ -697,9 +947,9 @@
         .tabs {
             display: flex;
             gap: 0.5rem;
-            background: rgba(0, 0, 0, 0.6);
+            background: rgba(255, 255, 255, 0.9);
             padding: 0.5rem;
-            border: 2px solid rgba(255, 215, 0, 0.2);
+            border: 2px solid rgba(17, 50, 66, 0.2);
             box-shadow: var(--shadow);
             overflow-x: auto;
         }
@@ -712,7 +962,7 @@
             cursor: pointer;
             transition: all 0.3s ease;
             white-space: nowrap;
-            color: rgba(255, 255, 255, 0.7);
+            color: var(--text-medium);
             text-transform: uppercase;
             letter-spacing: 1px;
             font-size: 0.85rem;
@@ -720,23 +970,23 @@
         }
 
         .tab:hover {
-            background: rgba(255, 215, 0, 0.1);
+            background: rgba(17, 50, 66, 0.1);
             color: var(--accent);
-            border-color: rgba(255, 215, 0, 0.3);
+            border-color: rgba(17, 50, 66, 0.3);
         }
 
         .tab.active {
             background: var(--gradient);
-            color: #000;
-            box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
+            color: white;
+            box-shadow: 0 0 20px rgba(17, 50, 66, 0.4);
             border-color: var(--accent);
         }
 
         .tab-content {
             margin-top: 2rem;
-            background: rgba(0, 0, 0, 0.6);
+            background: rgba(255, 255, 255, 0.9);
             backdrop-filter: blur(10px);
-            border: 2px solid rgba(255, 215, 0, 0.2);
+            border: 2px solid rgba(17, 50, 66, 0.2);
             padding: 2rem;
             box-shadow: var(--shadow);
             min-height: 400px;
@@ -778,8 +1028,8 @@
         .timeline-item {
             position: relative;
             padding: 1.5rem;
-            background: rgba(0, 0, 0, 0.4);
-            border: 1px solid rgba(255, 215, 0, 0.2);
+            background: rgba(248, 249, 250, 0.9);
+            border: 1px solid rgba(17, 50, 66, 0.2);
             border-left: 3px solid var(--accent);
             clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%);
             margin-bottom: 1.5rem;
@@ -788,8 +1038,8 @@
 
         .timeline-item:hover {
             transform: translateX(10px);
-            box-shadow: 0 4px 20px rgba(255, 215, 0, 0.3);
-            background: rgba(0, 0, 0, 0.6);
+            box-shadow: 0 4px 20px rgba(17, 50, 66, 0.3);
+            background: rgba(255, 255, 255, 0.9);
             border-color: var(--accent);
         }
 
@@ -802,12 +1052,12 @@
             height: 12px;
             background: var(--accent);
             border-radius: 50%;
-            border: 3px solid var(--bg-dark);
-            box-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
+            border: 3px solid var(--bg-light);
+            box-shadow: 0 0 15px rgba(17, 50, 66, 0.6);
         }
 
         .timeline-date {
-            color: rgba(255, 255, 255, 0.5);
+            color: var(--text-light);
             font-size: 0.75rem;
             margin-bottom: 0.8rem;
             text-transform: uppercase;
@@ -823,7 +1073,7 @@
         }
 
         .timeline-header {
-            color: rgba(255, 255, 255, 0.9);
+            color: var(--text-dark);
             font-size: 0.95rem;
             margin-bottom: 0.5rem;
             line-height: 1.6;
@@ -846,31 +1096,31 @@
 
         .timeline-badge.ap {
             background: linear-gradient(135deg, #4CAF50, #45a049);
-            color: #fff;
+            color: white;
             box-shadow: 0 2px 8px rgba(76, 175, 80, 0.3);
         }
 
         .timeline-badge.promo {
-            background: linear-gradient(135deg, #FF9800, #F57C00);
-            color: #fff;
+            background: linear-gradient(135deg, var(--warning), #D97706);
+            color: white;
             box-shadow: 0 2px 8px rgba(255, 152, 0, 0.3);
         }
 
         .timeline-badge.curso {
             background: linear-gradient(135deg, #2196F3, #1976D2);
-            color: #fff;
+            color: white;
             box-shadow: 0 2px 8px rgba(33, 150, 243, 0.3);
         }
 
         .timeline-badge.gratif {
-            background: linear-gradient(135deg, #FFD700, #FFA500);
-            color: #000;
-            box-shadow: 0 2px 8px rgba(255, 215, 0, 0.3);
+            background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+            color: white;
+            box-shadow: 0 2px 8px rgba(17, 50, 66, 0.3);
         }
 
         .timeline-badge.aula {
             background: linear-gradient(135deg, #9C27B0, #7B1FA2);
-            color: #fff;
+            color: white;
             box-shadow: 0 2px 8px rgba(156, 39, 176, 0.3);
         }
 
@@ -901,7 +1151,7 @@
 
         .timeline-status.pending {
             background: rgba(255, 152, 0, 0.2);
-            color: #FF9800;
+            color: var(--warning);
             border: 1px solid rgba(255, 152, 0, 0.4);
         }
 
@@ -912,15 +1162,15 @@
         }
 
         .timeline-description {
-            color: rgba(255, 255, 255, 0.7);
+            color: var(--text-medium);
             font-size: 0.9rem;
             line-height: 1.6;
             padding-left: 1rem;
-            border-left: 2px solid rgba(255, 215, 0, 0.3);
+            border-left: 2px solid rgba(17, 50, 66, 0.3);
         }
 
         .timeline-content {
-            color: rgba(255, 255, 255, 0.9);
+            color: var(--text-dark);
             font-weight: 500;
         }
 
@@ -936,8 +1186,8 @@
         }
 
         .course-card {
-            background: rgba(0, 0, 0, 0.4);
-            border: 1px solid rgba(255, 215, 0, 0.2);
+            background: rgba(248, 249, 250, 0.9);
+            border: 1px solid rgba(17, 50, 66, 0.2);
             border-left: 3px solid var(--accent);
             clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%);
             padding: 1.5rem;
@@ -953,7 +1203,7 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.1), transparent);
+            background: linear-gradient(90deg, transparent, rgba(17, 50, 66, 0.1), transparent);
             transition: left 0.5s;
         }
 
@@ -964,8 +1214,8 @@
         .course-card:hover {
             transform: translateY(-5px);
             border-color: var(--accent);
-            box-shadow: 0 8px 24px rgba(255, 215, 0, 0.3);
-            background: rgba(0, 0, 0, 0.6);
+            box-shadow: 0 8px 24px rgba(17, 50, 66, 0.3);
+            background: rgba(255, 255, 255, 0.9);
         }
 
         .course-icon {
@@ -977,9 +1227,9 @@
             align-items: center;
             justify-content: center;
             margin-bottom: 1rem;
-            color: #000;
+            color: white;
             font-size: 1.5rem;
-            box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+            box-shadow: 0 0 20px rgba(17, 50, 66, 0.5);
         }
 
         .course-name {
@@ -1001,8 +1251,8 @@
 
         .status-pending {
             background: rgba(255, 193, 7, 0.3);
-            color: #FFC107;
-            border: 1px solid #FFC107;
+            color: #113242;
+            border: 1px solid #113242;
         }
 
         .status-completed {
@@ -1013,9 +1263,9 @@
 
         /* Emblems and Functions - Moved to sidebar */
         .badges-widget {
-            background: rgba(0, 0, 0, 0.6);
+            background: rgba(255, 255, 255, 0.9);
             backdrop-filter: blur(10px);
-            border: 2px solid rgba(255, 215, 0, 0.2);
+            border: 2px solid rgba(17, 50, 66, 0.2);
             padding: 1.5rem;
             box-shadow: var(--shadow);
             margin-bottom: 1.5rem;
@@ -1031,7 +1281,7 @@
             display: flex;
             align-items: center;
             gap: 0.5rem;
-            border-bottom: 2px solid rgba(255, 215, 0, 0.2);
+            border-bottom: 2px solid rgba(17, 50, 66, 0.2);
             padding-bottom: 0.8rem;
         }
 
@@ -1045,7 +1295,7 @@
 
         .badge-group h4 {
             font-size: 0.85rem;
-            color: rgba(255, 255, 255, 0.7);
+            color: var(--text-medium);
             margin-bottom: 1rem;
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -1061,28 +1311,70 @@
         .badge-item {
             aspect-ratio: 1;
             clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-            background: linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(255, 165, 0, 0.2));
+            background: 
+                linear-gradient(135deg, rgba(17, 50, 66, 0.2), rgba(17, 50, 66, 0.2)),
+                url('https://i.imgur.com/og5u7RZ.jpeg');
+            background-size: 150%;
+            background-position: center;
             border: 2px solid var(--accent);
             display: flex;
             align-items: center;
             justify-content: center;
             cursor: pointer;
             transition: all 0.3s ease;
-            box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+            box-shadow: 0 0 8px rgba(17, 50, 66, 0.15);
             position: relative;
+            overflow: hidden;
+        }
+
+        .badge-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://i.imgur.com/og5u7RZ.jpeg');
+            background-size: 220%;
+            background-position: center;
+            filter: blur(3px);
+            z-index: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .badge-item::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(17, 50, 66, 0.2), rgba(17, 50, 66, 0.2));
+            z-index: 1;
+            transition: opacity 0.3s ease;
         }
 
         .badge-item:hover {
             transform: translateY(-5px) scale(1.1);
-            box-shadow: 0 0 25px rgba(255, 215, 0, 0.6);
-            background: linear-gradient(135deg, rgba(255, 215, 0, 0.4), rgba(255, 165, 0, 0.4));
+            box-shadow: 0 0 12px rgba(17, 50, 66, 0.3);
+        }
+
+        .badge-item:hover::before,
+        .badge-item:hover::after {
+            opacity: 0;
+        }
+
+        .badge-item:hover {
+            background: var(--accent) !important;
         }
 
         .badge-item img {
             width: 70%;
             height: 70%;
             object-fit: contain;
-            filter: drop-shadow(0 0 5px rgba(255, 215, 0, 0.5));
+            filter: drop-shadow(0 0 5px rgba(17, 50, 66, 0.5));
+            position: relative;
+            z-index: 2;
         }
 
         /* Gratifications */
@@ -1093,16 +1385,16 @@
         }
 
         .gratification-card {
-            background: linear-gradient(135deg, rgba(255, 215, 0, 0.2) 0%, rgba(255, 165, 0, 0.2) 100%);
+            background: linear-gradient(135deg, rgba(17, 50, 66, 0.2) 0%, rgba(17, 50, 66, 0.2) 100%);
             border: 2px solid var(--accent);
             border-left: 4px solid var(--accent);
             clip-path: polygon(0 0, calc(100% - 15px) 0, 100% 15px, 100% 100%, 15px 100%, 0 calc(100% - 15px));
             padding: 1.5rem;
-            color: white;
+            color: var(--text-dark);
             position: relative;
             overflow: hidden;
             transition: all 0.3s ease;
-            box-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
+            box-shadow: 0 0 30px rgba(17, 50, 66, 0.3);
         }
 
         .gratification-card::before {
@@ -1116,8 +1408,8 @@
 
         .gratification-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 12px 32px rgba(255, 215, 0, 0.5);
-            background: linear-gradient(135deg, rgba(255, 215, 0, 0.3) 0%, rgba(255, 165, 0, 0.3) 100%);
+            box-shadow: 0 12px 32px rgba(17, 50, 66, 0.5);
+            background: linear-gradient(135deg, rgba(17, 50, 66, 0.3) 0%, rgba(17, 50, 66, 0.3) 100%);
         }
 
         .gratification-title {
@@ -1125,7 +1417,7 @@
             font-weight: 700;
             margin-bottom: 0.5rem;
             color: var(--accent);
-            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+            text-shadow: 0 1px 2px rgba(17, 50, 66, 0.08);
             text-transform: uppercase;
             letter-spacing: 1px;
         }
@@ -1141,14 +1433,14 @@
         .gratification-desc {
             font-size: 0.9rem;
             line-height: 1.5;
-            color: rgba(255, 255, 255, 0.9);
+            color: var(--text-dark);
         }
 
         /* Calendar Widget */
         .calendar-widget {
-            background: rgba(0, 0, 0, 0.6);
+            background: rgba(255, 255, 255, 0.9);
             backdrop-filter: blur(10px);
-            border: 2px solid rgba(255, 215, 0, 0.2);
+            border: 2px solid rgba(17, 50, 66, 0.2);
             padding: 1.5rem;
             box-shadow: var(--shadow);
             position: relative;
@@ -1160,7 +1452,7 @@
             align-items: center;
             margin-bottom: 1.5rem;
             padding-bottom: 1rem;
-            border-bottom: 2px solid rgba(255, 215, 0, 0.2);
+            border-bottom: 2px solid rgba(17, 50, 66, 0.2);
         }
 
         .calendar-title {
@@ -1169,7 +1461,7 @@
             color: var(--accent);
             text-transform: uppercase;
             letter-spacing: 2px;
-            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+            text-shadow: 0 1px 2px rgba(17, 50, 66, 0.08);
         }
 
         .calendar-nav {
@@ -1178,7 +1470,7 @@
         }
 
         .calendar-nav button {
-            background: rgba(255, 215, 0, 0.1);
+            background: rgba(17, 50, 66, 0.1);
             border: 1px solid var(--accent);
             width: 35px;
             height: 35px;
@@ -1192,8 +1484,8 @@
 
         .calendar-nav button:hover {
             background: var(--gradient);
-            color: #000;
-            box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+            color: white;
+            box-shadow: 0 0 15px rgba(17, 50, 66, 0.5);
         }
 
         .calendar-grid {
@@ -1211,9 +1503,9 @@
             font-weight: 700;
             cursor: pointer;
             transition: all 0.3s ease;
-            background: rgba(0, 0, 0, 0.3);
-            border: 1px solid rgba(255, 215, 0, 0.1);
-            color: rgba(255, 255, 255, 0.7);
+            background: rgba(224, 226, 230, 0.5);
+            border: 1px solid rgba(17, 50, 66, 0.1);
+            color: var(--text-medium);
             position: relative;
         }
 
@@ -1229,20 +1521,20 @@
         }
 
         .calendar-day.inactive {
-            color: rgba(255, 255, 255, 0.3);
+            color: var(--text-light);
             opacity: 0.5;
         }
 
         .calendar-day.today {
             background: var(--gradient);
-            color: #000;
-            box-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
+            color: white;
+            box-shadow: 0 0 15px rgba(17, 50, 66, 0.6);
             border-color: var(--accent);
             clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
         }
 
         .calendar-day.event {
-            background: rgba(255, 215, 0, 0.2);
+            background: rgba(17, 50, 66, 0.2);
             color: var(--accent);
             border-color: var(--accent);
             position: relative;
@@ -1256,7 +1548,7 @@
         }
 
         .calendar-day:not(.header):not(.inactive):not(.today):hover {
-            background: rgba(255, 215, 0, 0.2);
+            background: rgba(17, 50, 66, 0.2);
             border-color: var(--accent);
             transform: scale(1.1);
             color: var(--accent);
@@ -1266,7 +1558,7 @@
         .events-list {
             margin-top: 1.5rem;
             padding-top: 1.5rem;
-            border-top: 2px solid rgba(255, 215, 0, 0.2);
+            border-top: 2px solid rgba(17, 50, 66, 0.2);
         }
 
         .events-list h4 {
@@ -1279,9 +1571,9 @@
         }
 
         .event-item {
-            background: rgba(0, 0, 0, 0.4);
+            background: rgba(248, 249, 250, 0.9);
             padding: 1rem;
-            border: 1px solid rgba(255, 215, 0, 0.2);
+            border: 1px solid rgba(17, 50, 66, 0.2);
             border-left: 3px solid var(--accent);
             clip-path: polygon(0 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%);
             margin-bottom: 0.8rem;
@@ -1290,9 +1582,9 @@
 
         .event-item:hover {
             transform: translateX(5px);
-            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+            box-shadow: 0 4px 15px rgba(17, 50, 66, 0.3);
             border-color: var(--accent);
-            background: rgba(0, 0, 0, 0.6);
+            background: rgba(255, 255, 255, 0.9);
         }
 
         .event-title {
@@ -1304,7 +1596,7 @@
 
         .event-time {
             font-size: 0.75rem;
-            color: rgba(255, 255, 255, 0.6);
+            color: var(--text-medium);
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
@@ -1313,18 +1605,16 @@
 
         /* Sidebar Layout */
         .content-layout {
-            max-width: 1600px;
-            margin: 3rem auto;
-            padding: 0 3rem;
+            max-width: 1400px;
+            margin: 2rem auto;
+            padding: 0 2rem;
             display: grid;
-            grid-template-columns: 1fr;
+            grid-template-columns: 1fr 350px;
             gap: 2rem;
-            min-height: calc(100vh - 200px);
         }
 
         .main-content {
             min-width: 0;
-            width: 100%;
         }
 
         .sidebar {
@@ -1335,9 +1625,9 @@
 
         /* Rankings */
         .ranking-card {
-            background: rgba(0, 0, 0, 0.6);
+            background: rgba(255, 255, 255, 0.9);
             backdrop-filter: blur(10px);
-            border: 2px solid rgba(255, 215, 0, 0.2);
+            border: 2px solid rgba(17, 50, 66, 0.2);
             padding: 1.5rem;
             box-shadow: var(--shadow);
         }
@@ -1352,7 +1642,7 @@
             gap: 0.5rem;
             text-transform: uppercase;
             letter-spacing: 2px;
-            border-bottom: 2px solid rgba(255, 215, 0, 0.2);
+            border-bottom: 2px solid rgba(17, 50, 66, 0.2);
             padding-bottom: 0.8rem;
         }
 
@@ -1366,41 +1656,112 @@
             display: flex;
             align-items: center;
             gap: 1rem;
-            padding: 0.8rem;
-            background: rgba(0, 0, 0, 0.4);
-            border: 1px solid rgba(255, 215, 0, 0.2);
-            border-left: 3px solid var(--accent);
-            clip-path: polygon(0 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%);
+            padding: 1rem;
+            background: linear-gradient(135deg, rgba(248, 249, 250, 0.95) 0%, rgba(13, 13, 13, 0.6) 100%);
+            border: 2px solid rgba(17, 50, 66, 0.25);
+            border-left: 4px solid var(--accent);
+            clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%);
             transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .ranking-item::before {
+            content: '';
+            position: absolute;
+            left: -100%;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(17, 50, 66, 0.15), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .ranking-item:hover::before {
+            left: 100%;
         }
 
         .ranking-item:hover {
-            transform: translateX(5px);
-            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
-            background: rgba(0, 0, 0, 0.6);
+            transform: translateX(8px);
+            box-shadow: 
+                0 5px 20px rgba(17, 50, 66, 0.4),
+                inset 0 0 20px rgba(17, 50, 66, 0.08);
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(13, 13, 13, 0.8) 100%);
             border-color: var(--accent);
+            border-left-width: 6px;
         }
 
         .ranking-position {
-            width: 35px;
-            height: 35px;
+            width: 40px;
+            height: 40px;
             clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
             background: var(--gradient);
-            color: #000;
+            color: white;
             display: flex;
             align-items: center;
             justify-content: center;
             font-weight: 700;
-            font-size: 0.85rem;
-            box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+            font-size: 0.9rem;
+            box-shadow: 
+                0 0 20px rgba(17, 50, 66, 0.6),
+                0 4px 15px rgba(17, 50, 66, 0.4);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .ranking-position::before {
+            content: '';
+            position: absolute;
+            inset: 2px;
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.3), transparent);
+        }
+
+        .ranking-item:hover .ranking-position {
+            transform: scale(1.15) rotate(10deg);
+            box-shadow: 
+                0 0 30px rgba(17, 50, 66, 0.8),
+                0 6px 20px rgba(17, 50, 66, 0.5);
         }
 
         .ranking-avatar {
             width: 45px;
             height: 45px;
-            border: 2px solid var(--accent);
+            border-radius: 50%;
+            border: 3px solid var(--accent);
             object-fit: cover;
-            box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+            box-shadow: 
+                0 0 20px rgba(17, 50, 66, 0.6),
+                0 0 40px rgba(17, 50, 66, 0.3),
+                inset 0 0 15px rgba(17, 50, 66, 0.2);
+            background: linear-gradient(135deg, rgba(17, 50, 66, 0.1), rgba(17, 50, 66, 0.05));
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .ranking-avatar::before {
+            content: '';
+            position: absolute;
+            inset: -5px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, var(--accent), transparent, var(--accent));
+            opacity: 0.3;
+            z-index: -1;
+            animation: rotateBorder 3s linear infinite;
+        }
+
+        .ranking-item:hover .ranking-avatar {
+            transform: scale(1.15);
+            box-shadow: 
+                0 0 30px rgba(17, 50, 66, 0.8),
+                0 0 50px rgba(17, 50, 66, 0.4),
+                inset 0 0 20px rgba(17, 50, 66, 0.3);
+            border-color: var(--text-dark);
+        }
+
+        @keyframes rotateBorder {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
 
         .ranking-info {
@@ -1415,18 +1776,18 @@
 
         .ranking-value {
             font-size: 0.75rem;
-            color: rgba(255, 255, 255, 0.6);
+            color: var(--text-medium);
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
 
         /* Active Users Sidebar */
         .active-users-card {
-            background: rgba(0, 0, 0, 0.6);
+            background: #1f4558;
             backdrop-filter: blur(10px);
-            border: 2px solid rgba(255, 215, 0, 0.2);
+            border: 2px solid rgba(255, 255, 255, 0.2);
             padding: 1.5rem;
-            box-shadow: var(--shadow);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
             margin-bottom: 1.5rem;
         }
 
@@ -1434,13 +1795,13 @@
             font-size: 1.1rem;
             font-weight: 700;
             margin-bottom: 1.5rem;
-            color: var(--accent);
+            color: #ffffff;
             display: flex;
             align-items: center;
             gap: 0.5rem;
             text-transform: uppercase;
             letter-spacing: 2px;
-            border-bottom: 2px solid rgba(255, 215, 0, 0.2);
+            border-bottom: 2px solid rgba(255, 255, 255, 0.2);
             padding-bottom: 0.8rem;
         }
 
@@ -1449,8 +1810,8 @@
             align-items: center;
             gap: 0.8rem;
             padding: 0.8rem;
-            background: rgba(0, 0, 0, 0.4);
-            border: 1px solid rgba(255, 215, 0, 0.2);
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
             border-left: 3px solid #4CAF50;
             clip-path: polygon(0 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%);
             transition: all 0.3s ease;
@@ -1459,16 +1820,16 @@
 
         .active-user-item:hover {
             transform: translateX(5px);
-            box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
-            background: rgba(0, 0, 0, 0.6);
-            border-left-color: #66BB6A;
+            box-shadow: 0 4px 15px rgba(76, 175, 80, 0.4);
+            background: rgba(255, 255, 255, 0.15);
+            border-left-color: var(--success);
         }
 
         .active-user-avatar {
             width: 40px;
             height: 40px;
             border: 2px solid #4CAF50;
-            box-shadow: 0 0 10px rgba(76, 175, 80, 0.4);
+            box-shadow: 0 0 10px rgba(76, 175, 80, 0.5);
         }
 
         .active-user-info {
@@ -1477,14 +1838,14 @@
 
         .active-user-name {
             font-weight: 600;
-            color: var(--accent);
+            color: #ffffff;
             font-size: 0.85rem;
             margin-bottom: 0.2rem;
         }
 
         .active-user-rank {
             font-size: 0.7rem;
-            color: rgba(255, 255, 255, 0.5);
+            color: rgba(255, 255, 255, 0.7);
             text-transform: uppercase;
         }
 
@@ -1492,18 +1853,18 @@
             width: 10px;
             height: 10px;
             border-radius: 50%;
-            background: #4CAF50;
+            background: var(--success);
             box-shadow: 0 0 8px rgba(76, 175, 80, 0.6);
             animation: pulse 2s infinite;
         }
 
         /* Compact Calendar */
         .calendar-compact {
-            background: rgba(0, 0, 0, 0.6);
+            background: #1f4558;
             backdrop-filter: blur(10px);
-            border: 2px solid rgba(255, 215, 0, 0.2);
+            border: 2px solid rgba(255, 255, 255, 0.2);
             padding: 1rem;
-            box-shadow: var(--shadow);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
         }
 
         .calendar-compact-header {
@@ -1512,13 +1873,13 @@
             align-items: center;
             margin-bottom: 1rem;
             padding-bottom: 0.8rem;
-            border-bottom: 2px solid rgba(255, 215, 0, 0.2);
+            border-bottom: 2px solid rgba(255, 255, 255, 0.2);
         }
 
         .calendar-compact-month {
             font-size: 0.95rem;
             font-weight: 700;
-            color: var(--accent);
+            color: #ffffff;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
@@ -1531,9 +1892,9 @@
         .calendar-compact-nav button {
             width: 25px;
             height: 25px;
-            background: rgba(255, 215, 0, 0.2);
-            border: 1px solid rgba(255, 215, 0, 0.3);
-            color: var(--accent);
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #ffffff;
             cursor: pointer;
             transition: all 0.3s ease;
             display: flex;
@@ -1544,7 +1905,7 @@
 
         .calendar-compact-nav button:hover {
             background: var(--accent);
-            color: #000;
+            color: white;
         }
 
         .calendar-compact-weekdays {
@@ -1557,7 +1918,7 @@
         .calendar-compact-weekday {
             text-align: center;
             font-size: 0.65rem;
-            color: rgba(255, 255, 255, 0.5);
+            color: rgba(255, 255, 255, 0.7);
             font-weight: 600;
             text-transform: uppercase;
             padding: 0.3rem 0;
@@ -1575,25 +1936,25 @@
             align-items: center;
             justify-content: center;
             font-size: 0.7rem;
-            color: rgba(255, 255, 255, 0.7);
+            color: rgba(255, 255, 255, 0.8);
             background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 215, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             cursor: pointer;
             transition: all 0.3s ease;
         }
 
         .calendar-compact-day:hover {
-            background: rgba(255, 215, 0, 0.2);
-            border-color: var(--accent);
-            color: var(--accent);
+            background: rgba(255, 255, 255, 0.15);
+            border-color: rgba(255, 255, 255, 0.4);
+            color: #ffffff;
         }
 
         .calendar-compact-day.today {
             background: var(--gradient);
-            color: #000;
+            color: white;
             font-weight: 700;
             border-color: var(--accent);
-            box-shadow: 0 0 10px rgba(255, 215, 0, 0.4);
+            box-shadow: 0 0 10px rgba(17, 50, 66, 0.6);
         }
 
         .calendar-compact-day.event {
@@ -1606,27 +1967,28 @@
             bottom: 2px;
             width: 4px;
             height: 4px;
-            background: #4CAF50;
+            background: var(--success);
             border-radius: 50%;
+            box-shadow: 0 0 4px rgba(76, 175, 80, 0.8);
         }
 
         .calendar-compact-day.inactive {
-            color: rgba(255, 255, 255, 0.2);
+            color: rgba(255, 255, 255, 0.3);
             cursor: default;
         }
 
         .calendar-compact-day.inactive:hover {
             background: rgba(255, 255, 255, 0.05);
-            border-color: rgba(255, 215, 0, 0.1);
-            color: rgba(255, 255, 255, 0.2);
+            border-color: rgba(17, 50, 66, 0.1);
+            color: var(--border-color);
         }
 
         /* Users & Calendar Section */
         .users-calendar-section {
-            background: linear-gradient(135deg, var(--dark-2) 0%, var(--dark-4) 100%);
+            background: #1f4558;
             padding: 4rem 2rem;
-            border-top: 3px solid var(--accent);
-            border-bottom: 3px solid var(--accent);
+            border-top: 3px solid rgba(255, 255, 255, 0.2);
+            border-bottom: 3px solid rgba(255, 255, 255, 0.2);
             position: relative;
             overflow: hidden;
         }
@@ -1638,7 +2000,7 @@
             left: 0;
             width: 100%;
             height: 4px;
-            background: linear-gradient(90deg, transparent, var(--accent), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
             animation: scanHorizontal 3s linear infinite;
         }
 
@@ -1663,21 +2025,77 @@
             gap: 0.8rem;
             margin-bottom: 2.5rem;
             padding-bottom: 1.2rem;
-            border-bottom: 3px solid rgba(255, 215, 0, 0.4);
+            border-bottom: 3px solid rgba(255, 255, 255, 0.3);
         }
 
         .users-active-header h2 {
             font-size: 1.6rem;
             font-weight: 700;
-            color: var(--accent);
+            color: #ffffff;
             text-transform: uppercase;
             letter-spacing: 3px;
             margin: 0;
-            text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
         }
 
         .users-active-icon {
             font-size: 2rem;
+            color: #ffffff;
+        }
+
+        .list-users {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            gap: 1.5rem;
+            padding: 1rem 0;
+        }
+
+        .habbo-user {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.8rem;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-left: 3px solid #4CAF50;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .habbo-user::before {
+            content: '';
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            width: 8px;
+            height: 8px;
+            background: #4CAF50;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(76, 175, 80, 0.8);
+            animation: pulse 2s infinite;
+        }
+
+        .habbo-user:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.15);
+            border-color: rgba(255, 255, 255, 0.4);
+            border-left-color: #4CAF50;
+            box-shadow: 0 8px 20px rgba(76, 175, 80, 0.3);
+        }
+
+        .habbo-imager {
+            width: 64px;
+            height: 110px;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            border: 2px solid #4CAF50;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(76, 175, 80, 0.4);
         }
 
         .users-grid {
@@ -1687,8 +2105,8 @@
         }
 
         .user-active-card {
-            background: rgba(0, 0, 0, 0.5);
-            border: 2px solid rgba(255, 215, 0, 0.2);
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.2);
             border-left: 3px solid #4CAF50;
             padding: 0.8rem;
             display: flex;
@@ -1707,29 +2125,29 @@
             right: 6px;
             width: 8px;
             height: 8px;
-            background: #4CAF50;
+            background: var(--success);
             border-radius: 50%;
-            box-shadow: 0 0 8px rgba(76, 175, 80, 0.6);
+            box-shadow: 0 0 8px rgba(76, 175, 80, 0.8);
             animation: pulse 2s infinite;
         }
 
         .user-active-card:hover {
             transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(76, 175, 80, 0.3);
-            border-left-color: #66BB6A;
-            background: rgba(0, 0, 0, 0.7);
+            box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
+            border-left-color: var(--success);
+            background: rgba(255, 255, 255, 0.15);
         }
 
         .user-active-avatar-large {
             width: 60px;
             height: 60px;
             border: 2px solid #4CAF50;
-            box-shadow: 0 0 12px rgba(76, 175, 80, 0.4);
+            box-shadow: 0 0 12px rgba(76, 175, 80, 0.5);
         }
 
         .user-active-name {
             font-weight: 700;
-            color: var(--accent);
+            color: #ffffff;
             font-size: 0.85rem;
             text-align: center;
             line-height: 1.2;
@@ -1737,7 +2155,7 @@
 
         .user-active-rank {
             font-size: 0.65rem;
-            color: rgba(255, 255, 255, 0.6);
+            color: rgba(255, 255, 255, 0.7);
             text-transform: uppercase;
             text-align: center;
             letter-spacing: 0.5px;
@@ -1756,37 +2174,37 @@
             gap: 0.8rem;
             margin-bottom: 1rem;
             padding-bottom: 1.2rem;
-            border-bottom: 3px solid rgba(255, 215, 0, 0.4);
+            border-bottom: 3px solid rgba(255, 255, 255, 0.3);
         }
 
         .calendar-sidebar-header h3 {
             font-size: 1.3rem;
             font-weight: 700;
-            color: var(--accent);
+            color: #ffffff;
             text-transform: uppercase;
             letter-spacing: 2px;
             margin: 0;
-            text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
         }
 
         .calendar-compact {
-            background: rgba(0, 0, 0, 0.4);
-            border: 2px solid rgba(255, 215, 0, 0.3);
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.2);
             border-radius: 8px;
             padding: 1.2rem;
         }
 
         /* Highlights Widget with Filters */
         .highlights-widget {
-            background: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(13, 13, 13, 0.9) 100%);
-            backdrop-filter: blur(15px);
-            border: 2px solid rgba(255, 215, 0, 0.4);
-            border-left: 4px solid var(--accent);
-            padding: 1.8rem;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 249, 250, 0.98) 100%);
+            backdrop-filter: blur(20px);
+            border: 3px solid rgba(17, 50, 66, 0.2);
+            border-left: 5px solid var(--accent);
+            padding: 2rem;
             box-shadow: 
-                0 8px 32px rgba(0, 0, 0, 0.6),
-                0 0 40px rgba(255, 215, 0, 0.2),
-                inset 0 0 30px rgba(255, 215, 0, 0.05);
+                var(--shadow-strong),
+                0 0 20px rgba(17, 50, 66, 0.1),
+                inset 0 1px 15px rgba(17, 50, 66, 0.025);
             margin-bottom: 1.5rem;
             clip-path: polygon(0 0, calc(100% - 15px) 0, 100% 15px, 100% 100%, 15px 100%, 0 calc(100% - 15px));
             position: relative;
@@ -1800,7 +2218,7 @@
             left: -2px;
             right: -2px;
             bottom: -2px;
-            background: linear-gradient(45deg, transparent, rgba(255, 215, 0, 0.1), transparent);
+            background: linear-gradient(45deg, transparent, rgba(17, 50, 66, 0.1), transparent);
             z-index: 0;
             opacity: 0;
             transition: opacity 0.3s ease;
@@ -1819,22 +2237,12 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 1.8rem;
+            margin-bottom: -1.2rem;
             padding-bottom: 1rem;
-            border-bottom: 3px solid rgba(255, 215, 0, 0.3);
             position: relative;
         }
 
-        .highlights-header::after {
-            content: '';
-            position: absolute;
-            bottom: -3px;
-            left: 0;
-            width: 60px;
-            height: 3px;
-            background: var(--gradient);
-            box-shadow: 0 0 10px rgba(255, 215, 0, 0.6);
-        }
+  
 
         .widget-title {
             font-size: 1.1rem;
@@ -1842,7 +2250,7 @@
             color: var(--accent);
             text-transform: uppercase;
             letter-spacing: 2px;
-            text-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+            text-shadow: 0 1px 3px rgba(17, 50, 66, 0.1);
             display: flex;
             align-items: center;
             gap: 0.5rem;
@@ -1851,14 +2259,15 @@
         .highlights-filters {
             display: flex;
             gap: 0.6rem;
+                margin-top: -28px;
         }
 
         .filter-btn {
             width: 38px;
             height: 38px;
-            background: rgba(255, 215, 0, 0.1);
-            border: 2px solid rgba(255, 215, 0, 0.3);
-            color: rgba(255, 255, 255, 0.6);
+            background: rgba(17, 50, 66, 0.08);
+            border: 2px solid rgba(17, 50, 66, 0.25);
+            color: var(--text-medium);
             cursor: pointer;
             transition: all 0.3s ease;
             display: flex;
@@ -1885,27 +2294,27 @@
         }
 
         .filter-btn:hover {
-            background: rgba(255, 215, 0, 0.2);
+            background: rgba(17, 50, 66, 0.12);
             border-color: var(--accent);
             color: var(--accent);
             transform: scale(1.15) rotate(5deg);
-            box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
+            box-shadow: 0 0 15px rgba(17, 50, 66, 0.25);
         }
 
         .filter-btn.active {
-            background: transparent;
+            background: var(--accent);
             border-color: var(--accent);
-            color: #000;
-            box-shadow: 0 0 25px rgba(255, 215, 0, 0.7);
+            color: white;
+            box-shadow: 0 0 25px rgba(17, 50, 66, 0.4);
             transform: scale(1.1);
         }
 
         .filter-btn.active::before {
-            opacity: 1;
+            opacity: 0;
         }
 
         .filter-btn.active i {
-            color: #000;
+            color: white;
             font-weight: 900;
         }
 
@@ -1934,11 +2343,12 @@
         .highlight-user-item {
             display: flex;
             align-items: center;
-            gap: 1rem;
-            padding: 1rem;
-            background: linear-gradient(135deg, rgba(0, 0, 0, 0.5) 0%, rgba(13, 13, 13, 0.6) 100%);
-            border: 2px solid rgba(255, 215, 0, 0.25);
+            gap: 1.2rem;
+            padding: 1.2rem 1.5rem;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 249, 250, 0.9) 100%);
+            border: 2px solid rgba(17, 50, 66, 0.15);
             border-left: 4px solid var(--accent);
+            border-radius: 8px;
             clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%);
             transition: all 0.3s ease;
             position: relative;
@@ -1952,7 +2362,7 @@
             top: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.1), transparent);
+            background: linear-gradient(90deg, transparent, rgba(17, 50, 66, 0.08), transparent);
             transition: left 0.5s ease;
         }
 
@@ -1961,31 +2371,49 @@
         }
 
         .highlight-user-item:hover {
-            transform: translateX(8px);
+            transform: translateX(8px) scale(1.02);
             box-shadow: 
-                0 5px 20px rgba(255, 215, 0, 0.3),
-                inset 0 0 20px rgba(255, 215, 0, 0.05);
-            background: linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(13, 13, 13, 0.8) 100%);
+                0 8px 30px rgba(17, 50, 66, 0.15),
+                inset 0 1px 10px rgba(17, 50, 66, 0.025);
+            background: linear-gradient(135deg, rgba(232, 244, 248, 0.95) 0%, rgba(212, 233, 240, 0.9) 100%);
             border-color: var(--accent);
             border-left-width: 6px;
         }
 
         .highlight-rank {
-            width: 40px;
-            height: 40px;
+            width: 50px;
+            height: 50px;
             clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
             background: var(--gradient);
-            color: #000;
+            color: white;
             display: flex;
             align-items: center;
             justify-content: center;
             font-weight: 900;
-            font-size: 0.95rem;
+            font-size: 1.1rem;
             box-shadow: 
-                0 0 20px rgba(255, 215, 0, 0.6),
-                inset 0 2px 4px rgba(255, 255, 255, 0.3);
+                0 0 12px rgba(17, 50, 66, 0.35),
+                0 4px 8px rgba(17, 50, 66, 0.2),
+                inset 0 2px 4px rgba(255, 255, 255, 0.2);
             position: relative;
             flex-shrink: 0;
+            transition: all 0.3s ease;
+        }
+
+        .highlight-rank::before {
+            content: '';
+            position: absolute;
+            inset: 2px;
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.4), transparent);
+        }
+
+        .highlight-user-item:hover .highlight-rank {
+            transform: scale(1.15) rotate(15deg);
+            box-shadow: 
+                0 0 18px rgba(17, 50, 66, 0.45),
+                0 6px 12px rgba(17, 50, 66, 0.25),
+                inset 0 2px 4px rgba(255, 255, 255, 0.4);
         }
 
         .highlight-rank::after {
@@ -1997,20 +2425,49 @@
         }
 
         .highlight-user-avatar {
-            width: 50px;
-            height: 50px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
             border: 3px solid var(--accent);
             object-fit: cover;
             box-shadow: 
-                0 0 15px rgba(255, 215, 0, 0.4),
-                inset 0 0 10px rgba(0, 0, 0, 0.3);
+                0 0 10px rgba(17, 50, 66, 0.3),
+                0 0 20px rgba(17, 50, 66, 0.15),
+                inset 0 0 8px rgba(17, 50, 66, 0.1);
             flex-shrink: 0;
             transition: all 0.3s ease;
+            background: linear-gradient(135deg, rgba(17, 50, 66, 0.1), rgba(17, 50, 66, 0.05));
+            position: relative;
+            overflow: visible;
+        }
+
+        .highlight-user-avatar::before {
+            content: '';
+            position: absolute;
+            inset: -6px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, 
+                var(--accent) 0%, 
+                transparent 25%, 
+                transparent 75%, 
+                var(--accent) 100%);
+            opacity: 0.4;
+            z-index: -1;
+            animation: rotateBorderHighlight 4s linear infinite;
+        }
+
+        @keyframes rotateBorderHighlight {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
 
         .highlight-user-item:hover .highlight-user-avatar {
-            transform: scale(1.1);
-            box-shadow: 0 0 25px rgba(255, 215, 0, 0.6);
+            transform: scale(1.15) rotate(5deg);
+            box-shadow: 
+                0 0 15px rgba(17, 50, 66, 0.4),
+                0 0 25px rgba(17, 50, 66, 0.25),
+                inset 0 0 10px rgba(17, 50, 66, 0.15);
+            border-color: var(--text-dark);
         }
 
         .highlight-user-info {
@@ -2021,9 +2478,9 @@
         .highlight-user-name {
             font-weight: 700;
             color: var(--accent);
-            font-size: 0.95rem;
+            font-size: 1rem;
             margin-bottom: 0.3rem;
-            text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+            text-shadow: 0 0 5px rgba(17, 50, 66, 0.15);
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
@@ -2032,9 +2489,9 @@
         .highlight-user-value {
             font-size: 1.15rem;
             font-weight: 800;
-            color: #fff;
-            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
-            background: linear-gradient(90deg, var(--accent), #FFA500);
+            color: var(--text-dark);
+            text-shadow: 0 2px 8px rgba(248, 249, 250, 0.95);
+            background: linear-gradient(90deg, var(--accent), var(--accent-dark));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -2050,8 +2507,8 @@
         .empty-state {
             text-align: center;
             padding: 4rem 2rem;
-            background: rgba(0, 0, 0, 0.3);
-            border: 2px dashed rgba(255, 215, 0, 0.2);
+            background: rgba(224, 226, 230, 0.5);
+            border: 2px dashed rgba(17, 50, 66, 0.2);
             border-radius: 15px;
         }
 
@@ -2071,7 +2528,7 @@
         }
 
         .empty-state p {
-            color: rgba(255, 255, 255, 0.6);
+            color: var(--text-medium);
             font-size: 1rem;
         }
 
@@ -2329,7 +2786,7 @@
             height: 20px;
             border: 3px solid rgba(255, 255, 255, 0.3);
             border-radius: 50%;
-            border-top-color: white;
+            border-top-color: var(--text-dark);
             animation: spin 1s ease-in-out infinite;
         }
 
@@ -2339,9 +2796,9 @@
 
         /* Banner Widget */
         .banner-widget {
-            background: rgba(0, 0, 0, 0.6);
+            background: rgba(255, 255, 255, 0.9);
             backdrop-filter: blur(10px);
-            border: 2px solid rgba(255, 215, 0, 0.2);
+            border: 2px solid rgba(17, 50, 66, 0.2);
             padding: 1.5rem;
             box-shadow: var(--shadow);
             margin-bottom: 1.5rem;
@@ -2380,7 +2837,7 @@
         .banner-title {
             font-size: 1.5rem;
             font-weight: 700;
-            color: #000;
+            color: white;
             margin-bottom: 0.5rem;
             text-transform: uppercase;
             letter-spacing: 2px;
@@ -2389,14 +2846,14 @@
 
         .banner-text {
             font-size: 1rem;
-            color: rgba(0, 0, 0, 0.8);
+            color: white;
             font-weight: 600;
             z-index: 1;
         }
 
         /* Footer */
         .footer {
-            background: linear-gradient(180deg, var(--dark-1) 0%, var(--primary) 100%);
+            background: linear-gradient(180deg, var(--light-1) 0%, var(--primary) 100%);
             border-top: 3px solid var(--accent);
             padding: 3rem 0 2rem;
             margin-top: 4rem;
@@ -2434,7 +2891,7 @@
             text-transform: uppercase;
             letter-spacing: 2px;
             margin-bottom: 1rem;
-            border-bottom: 2px solid rgba(255, 215, 0, 0.2);
+            border-bottom: 2px solid rgba(17, 50, 66, 0.2);
             padding-bottom: 0.5rem;
         }
 
@@ -2448,7 +2905,7 @@
         }
 
         .footer-links a {
-            color: rgba(255, 255, 255, 0.7);
+            color: var(--text-medium);
             text-decoration: none;
             transition: all 0.3s ease;
             display: inline-block;
@@ -2481,7 +2938,7 @@
             width: 40px;
             height: 40px;
             clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-            background: rgba(255, 215, 0, 0.1);
+            background: rgba(17, 50, 66, 0.1);
             border: 2px solid var(--accent);
             display: flex;
             align-items: center;
@@ -2494,16 +2951,16 @@
 
         .footer-social a:hover {
             background: var(--gradient);
-            color: #000;
-            box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+            color: white;
+            box-shadow: 0 0 20px rgba(17, 50, 66, 0.6);
             transform: translateY(-3px);
         }
 
         .footer-bottom {
             text-align: center;
             padding-top: 2rem;
-            border-top: 1px solid rgba(255, 215, 0, 0.2);
-            color: rgba(255, 255, 255, 0.6);
+            border-top: 1px solid rgba(17, 50, 66, 0.2);
+            color: var(--text-medium);
             font-size: 0.85rem;
         }
 
@@ -2527,7 +2984,7 @@
             gap: 1rem;
             margin-bottom: 1.5rem;
             padding-bottom: 0.8rem;
-            border-bottom: 2px solid rgba(255, 215, 0, 0.3);
+            border-bottom: 2px solid rgba(17, 50, 66, 0.3);
         }
 
         .section-header h2 {
@@ -2537,11 +2994,12 @@
             letter-spacing: 2px;
             font-weight: 700;
             margin: 0;
-            text-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+            text-shadow: 0 1px 3px rgba(17, 50, 66, 0.1);
         }
 
         .section-icon {
             font-size: 1.8rem;
+            color: var(--accent);
         }
 
         /* Announcements Carousel */
@@ -2549,8 +3007,8 @@
             position: relative;
             width: 100%;
             overflow: hidden;
-            background: linear-gradient(135deg, rgba(0, 0, 0, 0.6) 0%, rgba(255, 215, 0, 0.1) 100%);
-            border: 2px solid rgba(255, 215, 0, 0.3);
+            background: rgba(255, 255, 255, 0.95);
+            border: 2px solid rgba(17, 50, 66, 0.2);
             border-radius: 8px;
             clip-path: polygon(0 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%);
             margin-bottom: 2rem;
@@ -2571,7 +3029,7 @@
             display: flex;
             align-items: center;
             gap: 2rem;
-            background: linear-gradient(90deg, var(--dark-1) 0%, rgba(255, 215, 0, 0.05) 50%, var(--dark-1) 100%);
+            background: linear-gradient(90deg, rgba(248, 249, 250, 0.9) 0%, rgba(17, 50, 66, 0.05) 50%, rgba(248, 249, 250, 0.9) 100%);
         }
 
         .announcement-icon {
@@ -2588,7 +3046,7 @@
             display: inline-block;
             padding: 0.25rem 0.7rem;
             background: var(--gradient);
-            color: #000;
+            color: white;
             font-size: 0.7rem;
             font-weight: 700;
             text-transform: uppercase;
@@ -2606,7 +3064,7 @@
         }
 
         .announcement-text {
-            color: rgba(255, 255, 255, 0.8);
+            color: var(--text-medium);
             line-height: 1.6;
             font-size: 0.9rem;
             margin-bottom: 0.5rem;
@@ -2614,7 +3072,7 @@
 
         .announcement-date {
             font-size: 0.75rem;
-            color: rgba(255, 215, 0, 0.6);
+            color: rgba(17, 50, 66, 0.6);
             display: flex;
             align-items: center;
             gap: 0.4rem;
@@ -2623,8 +3081,8 @@
         /* Transparency Cards */
         .transparency-card {
             min-width: 100%;
-            background: linear-gradient(135deg, var(--dark-2) 0%, var(--dark-3) 100%);
-            border: 2px solid rgba(255, 215, 0, 0.3);
+            background: linear-gradient(135deg, var(--light-2) 0%, var(--light-3) 100%);
+            border: 2px solid rgba(17, 50, 66, 0.3);
             overflow: hidden;
             display: flex;
             flex-direction: column;
@@ -2636,14 +3094,14 @@
         .transparency-card:hover {
             border-color: var(--accent);
             transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.25);
+            box-shadow: 0 8px 25px rgba(17, 50, 66, 0.25);
         }
 
         .transparency-image {
             width: 100%;
             height: 160px;
             overflow: hidden;
-            background: rgba(0, 0, 0, 0.4);
+            background: rgba(248, 249, 250, 0.9);
             position: relative;
         }
 
@@ -2654,7 +3112,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.7) 100%);
+            background: linear-gradient(180deg, transparent 0%, rgba(255, 255, 255, 0.9) 100%);
             z-index: 1;
         }
 
@@ -2671,7 +3129,7 @@
 
         .transparency-content {
             padding: 1rem;
-            background: linear-gradient(135deg, var(--dark-1) 0%, var(--dark-2) 100%);
+            background: linear-gradient(135deg, var(--light-1) 0%, var(--light-2) 100%);
         }
 
         .transparency-title {
@@ -2693,14 +3151,147 @@
             100% { transform: translateX(0); }
         }
 
+        /* Promotions Section */
+        .promotions-section {
+            padding: 0;
+        }
+
+        .promotions-widget {
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            padding: 1.5rem;
+            clip-path: polygon(0 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .promotions-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            margin-top: 1rem;
+        }
+
+        .promotion-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            height: 3.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid rgba(255, 255, 255, 0.15);
+            border-left: 4px solid var(--accent);
+            padding: 0.75rem;
+            overflow: hidden;
+            clip-path: polygon(0 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .promotion-item::before {
+            content: '';
+            position: absolute;
+            left: -100%;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .promotion-item:hover::before {
+            left: 100%;
+        }
+
+        .promotion-item:hover {
+            transform: translateX(5px);
+            border-color: rgba(255, 255, 255, 0.3);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .promotion-avatar-wrapper {
+            width: 3rem;
+            height: 3rem;
+            flex-shrink: 0;
+            overflow: hidden;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            border: 3px solid var(--accent);
+            box-shadow: 
+                0 0 20px rgba(17, 50, 66, 0.6),
+                inset 0 0 10px rgba(0, 0, 0, 0.2);
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .promotion-avatar-wrapper::before {
+            content: '';
+            position: absolute;
+            inset: -4px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, var(--accent) 0%, transparent 50%, var(--accent) 100%);
+            opacity: 0.4;
+            z-index: -1;
+            animation: rotateBorderPromo 3s linear infinite;
+        }
+
+        @keyframes rotateBorderPromo {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .promotion-item:hover .promotion-avatar-wrapper {
+            transform: scale(1.1);
+            border-color: #ffffff;
+            box-shadow: 
+                0 0 30px rgba(255, 255, 255, 0.4),
+                inset 0 0 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .promotion-avatar-wrapper img {
+            width: 100%;
+            height: auto;
+            margin-top: -0.25rem;
+            object-fit: cover;
+        }
+
+        .promotion-info {
+            flex: 1;
+            min-width: 0;
+            overflow: hidden;
+        }
+
+        .promotion-name {
+            font-weight: 700;
+            color: #ffffff;
+            font-size: 0.95rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        .promotion-rank {
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.7);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            margin-top: 0.15rem;
+        }
+
+        .promotion-rank-name {
+            color: #ffffff;
+            font-weight: 600;
+        }
+
         /* Active Users Section - Compact Box */
         .active-users-section {
             margin: 2rem 0;
         }
 
         .active-users-box {
-            background: linear-gradient(135deg, var(--dark-3) 0%, rgba(255, 215, 0, 0.05) 100%);
-            border: 2px solid rgba(255, 215, 0, 0.3);
+            background: linear-gradient(135deg, var(--light-3) 0%, rgba(17, 50, 66, 0.05) 100%);
+            border: 2px solid rgba(17, 50, 66, 0.3);
             padding: 1.5rem;
             clip-path: polygon(0 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%);
         }
@@ -2723,16 +3314,16 @@
         .active-user-item img {
             width: 100%;
             height: 100%;
-            border: 2px solid rgba(255, 215, 0, 0.3);
+            border: 2px solid rgba(17, 50, 66, 0.3);
             border-radius: 8px;
             transition: all 0.3s ease;
-            background: rgba(0, 0, 0, 0.4);
+            background: rgba(248, 249, 250, 0.9);
         }
 
         .active-user-item:hover img {
             border-color: var(--accent);
             transform: translateY(-5px) scale(1.1);
-            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.5);
+            box-shadow: 0 8px 25px rgba(17, 50, 66, 0.5);
         }
 
         .active-indicator {
@@ -2741,8 +3332,8 @@
             right: 2px;
             width: 12px;
             height: 12px;
-            background: #4CAF50;
-            border: 2px solid #000;
+            background: var(--success);
+            border: 2px solid var(--accent);
             border-radius: 50%;
             box-shadow: 0 0 10px #4CAF50;
             animation: pulse 2s ease-in-out infinite;
@@ -2760,7 +3351,7 @@
         .highlight-badge {
             display: inline-block;
             background: var(--gradient);
-            color: #000;
+            color: var(--text-dark);
             padding: 0.25rem 0.7rem;
             font-size: 0.7rem;
             font-weight: 700;
@@ -2781,7 +3372,7 @@
 
         .highlight-role {
             font-size: 0.75rem;
-            color: rgba(255, 255, 255, 0.6);
+            color: var(--text-medium);
             margin-bottom: 0.75rem;
             text-transform: uppercase;
         }
@@ -2804,7 +3395,7 @@
 
         .highlight-stat-label {
             font-size: 0.65rem;
-            color: rgba(255, 255, 255, 0.6);
+            color: var(--text-medium);
             text-transform: uppercase;
         }
 
@@ -2815,8 +3406,8 @@
 
         /* Calendar Compact - Smaller Version */
         .calendar-full {
-            background: linear-gradient(135deg, var(--dark-2) 0%, rgba(255, 215, 0, 0.05) 100%);
-            border: 2px solid rgba(255, 215, 0, 0.2);
+            background: linear-gradient(135deg, var(--light-2) 0%, rgba(17, 50, 66, 0.05) 100%);
+            border: 2px solid rgba(17, 50, 66, 0.2);
             padding: 0.75rem;
             clip-path: polygon(0 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%);
             margin-bottom: 1.5rem;
@@ -2828,7 +3419,7 @@
             align-items: center;
             margin-bottom: 0.75rem;
             padding-bottom: 0.5rem;
-            border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+            border-bottom: 1px solid rgba(17, 50, 66, 0.2);
         }
 
         .calendar-full .calendar-title {
@@ -2840,7 +3431,7 @@
         }
 
         .calendar-full .calendar-nav button {
-            background: rgba(255, 215, 0, 0.1);
+            background: rgba(17, 50, 66, 0.1);
             border: 1px solid var(--accent);
             color: var(--accent);
             padding: 0.3rem 0.6rem;
@@ -2852,7 +3443,7 @@
 
         .calendar-full .calendar-nav button:hover {
             background: var(--accent);
-            color: #000;
+            color: var(--text-dark);
         }
 
         .calendar-full .calendar-grid {
@@ -2876,21 +3467,21 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: var(--dark-1);
-            border: 1px solid rgba(255, 215, 0, 0.1);
+            background: var(--light-1);
+            border: 1px solid rgba(17, 50, 66, 0.1);
             cursor: pointer;
             transition: all 0.3s ease;
             font-size: 0.7rem;
         }
 
         .calendar-full .calendar-day:hover {
-            background: rgba(255, 215, 0, 0.1);
+            background: rgba(17, 50, 66, 0.1);
             border-color: var(--accent);
         }
 
         .calendar-full .calendar-day.today {
             background: var(--accent);
-            color: #000;
+            color: var(--text-dark);
             font-weight: 700;
         }
 
@@ -2926,14 +3517,14 @@
 
         .event-item {
             min-width: 180px;
-            background: var(--dark-3);
+            background: var(--light-3);
             border-left: 3px solid var(--accent);
             padding: 0.6rem;
             transition: all 0.3s ease;
         }
 
         .event-item:hover {
-            background: rgba(255, 215, 0, 0.1);
+            background: rgba(17, 50, 66, 0.1);
             transform: translateY(-3px);
         }
 
@@ -2945,14 +3536,14 @@
         }
 
         .event-title {
-            color: #fff;
+            color: var(--text-dark);
             font-weight: 600;
             margin-bottom: 0.2rem;
             font-size: 0.75rem;
         }
 
         .event-description {
-            color: rgba(255, 255, 255, 0.7);
+            color: var(--text-medium);
             font-size: 0.65rem;
             line-height: 1.2;
         }
@@ -2962,815 +3553,207 @@
             100% { transform: translateX(calc(-180px * 4 - 4rem)); }
         }
 
-        /* Divisions Section Styles */
-        .divisions-section {
-            padding: 1.5rem 0;
-            max-width: 100%;
-            margin: 0 auto;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 2rem;
-            animation: fadeInUp 0.6s ease;
-        }
-
-        .section-header h2 {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 1.5rem;
-            color: var(--accent);
-            margin-bottom: 0.4rem;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
-        }
-
-        .section-header h2 i {
-            margin-right: 0.6rem;
-            color: var(--accent);
-        }
-
-        .section-header p {
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 0.85rem;
-        }
-
-        .divisions-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1.5rem;
-            padding: 0 2rem;
-        }
-
-        .division-box {
-            background: linear-gradient(135deg, rgba(0, 0, 0, 0.9), rgba(26, 26, 26, 0.95));
-            border: 2px solid rgba(255, 215, 0, 0.3);
-            border-radius: 10px;
-            padding: 1.3rem;
-            position: relative;
-            overflow: hidden;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            clip-path: polygon(
-                0 0, calc(100% - 10px) 0, 100% 10px,
-                100% 100%, 10px 100%, 0 calc(100% - 10px)
-            );
-            animation: fadeInUp 0.6s ease backwards;
-            min-height: 240px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            text-decoration: none;
-            color: inherit;
-        }
-
-        a.division-box {
-            cursor: pointer;
-        }
-
-        .division-box::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, rgba(255, 215, 0, 0.05), transparent);
-            opacity: 0;
-            transition: opacity 0.4s ease;
-            z-index: 0;
-        }
-
-        .division-box:hover::before {
-            opacity: 1;
-        }
-
-        .division-box:hover {
-            border-color: var(--accent);
-            transform: translateY(-6px);
-            box-shadow: 
-                0 12px 30px rgba(0, 0, 0, 0.5),
-                0 0 45px rgba(255, 215, 0, 0.2),
-                inset 0 1px 0 rgba(255, 255, 255, 0.1);
-        }
-
-        .division-box > * {
-            position: relative;
-            z-index: 1;
-        }
-
-        .division-icon {
-            width: 60px;
-            height: 60px;
-            margin: 0 auto 0.8rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(255, 165, 0, 0.05));
-            border: 2px solid rgba(255, 215, 0, 0.3);
-            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-            transition: all 0.4s ease;
-        }
-
-        .division-box:hover .division-icon {
-            transform: rotate(180deg) scale(1.1);
-            border-color: var(--accent);
-            background: linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(255, 165, 0, 0.1));
-            box-shadow: 
-                0 0 30px rgba(255, 215, 0, 0.4),
-                inset 0 0 20px rgba(255, 215, 0, 0.2);
-        }
-
-        .division-icon i {
-            font-size: 1.6rem;
-            color: var(--accent);
-            transition: all 0.4s ease;
-        }
-
-        .division-box:hover .division-icon i {
-            transform: rotate(-180deg);
-            text-shadow: 0 0 20px rgba(255, 215, 0, 0.8);
-        }
-
-        .division-box h3 {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 0.95rem;
-            color: #fff;
-            text-align: center;
-            margin-bottom: 0.5rem;
-            text-transform: uppercase;
-            letter-spacing: 0.8px;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-        }
-
-        .division-box p {
-            color: rgba(255, 255, 255, 0.7);
-            text-align: center;
-            line-height: 1.4;
-            margin-bottom: 0.8rem;
-            font-size: 0.7rem;
-        }
-
-        .division-stats {
-            display: flex;
-            justify-content: space-around;
-            gap: 0.6rem;
-            margin-bottom: 0.8rem;
-            padding: 0.6rem 0;
-            border-top: 1px solid rgba(255, 215, 0, 0.2);
-            border-bottom: 1px solid rgba(255, 215, 0, 0.2);
-        }
-
-        .stat-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 0.25rem;
-        }
-
-        .stat-item i {
-            color: var(--accent);
-            font-size: 0.8rem;
-        }
-
-        .stat-item span {
-            color: rgba(255, 255, 255, 0.8);
-            font-size: 0.6rem;
-            font-weight: 600;
-        }
-
-        .stat-item .status-ativado {
-            color: #4CAF50;
-            font-weight: 700;
-            text-transform: uppercase;
-        }
-
-        .stat-item .status-desativado {
-            color: #f44336;
-            font-weight: 700;
-            text-transform: uppercase;
-        }
-
-        .division-btn {
-            width: 100%;
-            padding: 0.55rem;
-            background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(255, 165, 0, 0.05));
-            border: 2px solid rgba(255, 215, 0, 0.3);
-            color: var(--accent);
-            font-family: 'Orbitron', sans-serif;
-            font-size: 0.75rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.8px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-            clip-path: polygon(
-                0 0, calc(100% - 8px) 0, 100% 8px,
-                100% 100%, 8px 100%, 0 calc(100% - 8px)
-            );
-        }
-
-        .division-btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.3), transparent);
-            transition: left 0.5s ease;
-        }
-
-        .division-btn:hover::before {
-            left: 100%;
-        }
-
-        .division-btn:hover {
-            background: linear-gradient(135deg, var(--accent), rgba(255, 165, 0, 0.9));
-            border-color: var(--accent);
-            color: #000;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 20px rgba(255, 215, 0, 0.4);
-        }
-
-        .division-btn i {
-            margin-left: 0.5rem;
-            transition: transform 0.3s ease;
-        }
-
-        .division-btn:hover i {
-            transform: translateX(5px);
-        }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Stagger animation for boxes */
-        .division-box:nth-child(1) { animation-delay: 0.1s; }
-        .division-box:nth-child(2) { animation-delay: 0.2s; }
-        .division-box:nth-child(3) { animation-delay: 0.3s; }
-        .division-box:nth-child(4) { animation-delay: 0.4s; }
-        .division-box:nth-child(5) { animation-delay: 0.5s; }
-        .division-box:nth-child(6) { animation-delay: 0.6s; }
-        .division-box:nth-child(7) { animation-delay: 0.7s; }
-        .division-box:nth-child(8) { animation-delay: 0.8s; }
-
-        /* Responsive adjustments */
-        @media (max-width: 1400px) {
-            .divisions-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-
+        /* Mobile Responsive Styles */
         @media (max-width: 1024px) {
-            .divisions-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 768px) {
-            .divisions-grid {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
+            .nav-unified {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 0.5rem;
             }
 
-            .section-header h2 {
-                font-size: 1.5rem;
+            .logo {
+                order: -1;
+                flex: 0 0 100%;
+                justify-content: center;
+                margin-bottom: 1rem;
             }
 
-            .division-box {
-                padding: 1.5rem;
-            }
-        }
-
-        /* Users & Calendar Section Styles */
-        .users-calendar-section {
-            background: linear-gradient(135deg, var(--dark-2) 0%, var(--dark-4) 100%);
-            padding: 2.5rem 2rem;
-            border-top: 3px solid var(--accent);
-            border-bottom: 3px solid var(--accent);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .users-calendar-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(90deg, transparent, var(--accent), transparent);
-            animation: scanHorizontal 3s linear infinite;
-        }
-
-        .users-calendar-wrapper {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 350px;
-            gap: 2rem;
-            position: relative;
-            z-index: 1;
-        }
-
-        .users-active-container {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .users-active-header {
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
-            margin-bottom: 1.5rem;
-            padding-bottom: 0.8rem;
-            border-bottom: 3px solid rgba(255, 215, 0, 0.4);
-        }
-
-        .users-active-header h2 {
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: var(--accent);
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            margin: 0;
-            text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
-        }
-
-        .users-active-icon {
-            font-size: 2rem;
-            color: var(--accent);
-        }
-
-        .users-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-            gap: 1rem;
-        }
-
-        .user-active-card {
-            background: rgba(0, 0, 0, 0.5);
-            border: 2px solid rgba(255, 215, 0, 0.2);
-            border-left: 3px solid #4CAF50;
-            padding: 0.8rem;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 0.5rem;
-            transition: all 0.3s ease;
-            clip-path: polygon(0 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%);
-            position: relative;
-        }
-
-        .user-active-card::before {
-            content: '';
-            position: absolute;
-            top: 6px;
-            right: 6px;
-            width: 8px;
-            height: 8px;
-            background: #4CAF50;
-            border-radius: 50%;
-            box-shadow: 0 0 8px rgba(76, 175, 80, 0.6);
-            animation: pulse 2s infinite;
-        }
-
-        .user-active-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(76, 175, 80, 0.3);
-            border-left-color: #66BB6A;
-            background: rgba(0, 0, 0, 0.7);
-        }
-
-        .user-active-avatar-large {
-            width: 60px;
-            height: 60px;
-            border: 2px solid #4CAF50;
-            box-shadow: 0 0 12px rgba(76, 175, 80, 0.4);
-        }
-
-        .user-active-name {
-            font-weight: 700;
-            color: var(--accent);
-            font-size: 0.85rem;
-            text-align: center;
-            line-height: 1.2;
-        }
-
-        .user-active-rank {
-            font-size: 0.65rem;
-            color: rgba(255, 255, 255, 0.6);
-            text-transform: uppercase;
-            text-align: center;
-            letter-spacing: 0.5px;
-            line-height: 1.3;
-        }
-
-        .calendar-sidebar-container {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-
-        .calendar-sidebar-header {
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
-            margin-bottom: 1rem;
-            padding-bottom: 1.2rem;
-            border-bottom: 3px solid rgba(255, 215, 0, 0.4);
-        }
-
-        .calendar-sidebar-header h3 {
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: var(--accent);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin: 0;
-            text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
-        }
-
-        .calendar-compact {
-            background: rgba(0, 0, 0, 0.4);
-            border: 2px solid rgba(255, 215, 0, 0.3);
-            border-radius: 8px;
-            padding: 1.2rem;
-        }
-
-        .calendar-compact-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 1rem;
-        }
-
-        .calendar-compact-month {
-            font-weight: 700;
-            color: var(--accent);
-            font-size: 1rem;
-        }
-
-        .calendar-compact-nav {
-            display: flex;
-            gap: 0.5rem;
-        }
-
-        .calendar-compact-nav button {
-            background: rgba(255, 215, 0, 0.1);
-            border: 1px solid rgba(255, 215, 0, 0.3);
-            color: var(--accent);
-            width: 28px;
-            height: 28px;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .calendar-compact-nav button:hover {
-            background: rgba(255, 215, 0, 0.2);
-            border-color: var(--accent);
-        }
-
-        .calendar-compact-weekdays {
-            display: grid;
-            grid-template-columns: repeat(7, 1fr);
-            gap: 0.3rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .calendar-compact-weekday {
-            text-align: center;
-            font-size: 0.7rem;
-            font-weight: 700;
-            color: var(--accent);
-            padding: 0.3rem;
-        }
-
-        .calendar-compact-days {
-            display: grid;
-            grid-template-columns: repeat(7, 1fr);
-            gap: 0.3rem;
-        }
-
-        .calendar-compact-day {
-            aspect-ratio: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 215, 0, 0.1);
-            border-radius: 4px;
-            font-size: 0.75rem;
-            color: rgba(255, 255, 255, 0.7);
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .calendar-compact-day:hover {
-            background: rgba(255, 215, 0, 0.1);
-            border-color: var(--accent);
-            color: #fff;
-        }
-
-        .calendar-compact-day.inactive {
-            color: rgba(255, 255, 255, 0.3);
-            cursor: default;
-        }
-
-        .calendar-compact-day.inactive:hover {
-            background: rgba(255, 255, 255, 0.05);
-            border-color: rgba(255, 215, 0, 0.1);
-        }
-
-        .calendar-compact-day.today {
-            background: var(--accent);
-            color: #000;
-            font-weight: 700;
-            border-color: var(--accent);
-        }
-
-        .calendar-compact-day.event {
-            position: relative;
-        }
-
-        .calendar-compact-day.event::after {
-            content: '';
-            position: absolute;
-            bottom: 2px;
-            width: 4px;
-            height: 4px;
-            background: var(--accent);
-            border-radius: 50%;
-        }
-
-        @media (max-width: 1024px) {
-            .users-calendar-wrapper {
+            .content-layout {
                 grid-template-columns: 1fr;
                 gap: 2rem;
             }
+
+            .sidebar {
+                order: -1;
+            }
         }
 
         @media (max-width: 768px) {
-            .users-calendar-section {
-                padding: 2rem 1rem;
+            body::before {
+                background-size: 40px 40px;
             }
 
-            .users-active-header h2 {
+            .header {
+                padding: 0;
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                background: var(--bg-white);
+                z-index: 1000;
+                box-shadow: 0 2px 10px rgba(248, 249, 250, 0.95);
+            }
+
+            .header-container {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 0.8rem 1rem;
+                position: relative;
+            }
+
+            .mobile-menu-toggle {
+                display: flex !important;
+                position: relative;
+                left: 0;
+                top: 0;
+                transform: none;
+                margin: 0;
+            }
+
+            .logo {
+                display: none !important;
+            }
+
+            .header-container::after {
+                content: 'PABSystem';
                 font-size: 1.2rem;
-                letter-spacing: 1px;
+                font-weight: 700;
+                color: var(--accent);
+                text-transform: uppercase;
+                letter-spacing: 2px;
             }
 
-            .users-grid {
-                grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-                gap: 0.8rem;
+            .nav-unified {
+                display: none !important;
             }
 
-            .user-active-card {
-                padding: 0.6rem;
+            .profile-hero {
+                margin-top: 60px;
             }
 
-            .user-active-avatar-large {
+            .nav-item > a {
+                padding: 0.8rem 1rem;
+                font-size: 0.85rem;
+            }
+
+            .logo-hexagon {
                 width: 50px;
                 height: 50px;
             }
 
-            .user-active-name {
-                font-size: 0.75rem;
-            }
-
-            .user-active-rank {
-                font-size: 0.6rem;
-            }
-
-            .calendar-sidebar-header h3 {
-                font-size: 1.1rem;
-            }
-
-            .calendar-compact {
-                padding: 1rem;
-            }
-
-            .calendar-compact-month {
+            .logo-text {
                 font-size: 0.9rem;
             }
 
-            .calendar-compact-nav button {
-                width: 24px;
-                height: 24px;
+            .dropdown-menu {
+                position: relative;
+                width: 100%;
+                top: 0;
+                margin-top: 0.5rem;
+            }
+
+            .profile-hero {
+                padding: 2rem 1rem;
+            }
+
+            .profile-container {
+                padding: 0 1rem;
+            }
+
+            .profile-card {
+                padding: 2rem 1.5rem;
+            }
+
+            .avatar {
+                width: 120px;
+                height: 120px;
+            }
+
+            .profile-name {
+                font-size: 1.8rem;
+                gap: 0.5rem;
+            }
+
+            .profile-tag {
                 font-size: 0.8rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .users-calendar-section {
-                padding: 1.5rem 0.5rem;
+                padding: 0.25rem 0.6rem;
             }
 
-            .users-active-header {
-                margin-bottom: 1.5rem;
-                padding-bottom: 0.8rem;
+            .rank-badge {
+                font-size: 0.8rem;
+                padding: 0.4rem 1rem;
             }
 
-            .users-active-header h2 {
-                font-size: 1rem;
+            .profile-stats {
+                gap: 1rem;
             }
 
-            .users-active-icon {
-                font-size: 1.5rem;
+            .stat-value {
+                font-size: 1.8rem;
             }
 
-            .users-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 0.6rem;
-            }
-
-            .user-active-card {
-                padding: 0.5rem;
-            }
-
-            .user-active-avatar-large {
-                width: 45px;
-                height: 45px;
-            }
-
-            .calendar-compact-weekday {
-                font-size: 0.65rem;
-                padding: 0.2rem;
-            }
-
-            .calendar-compact-day {
+            .stat-label {
                 font-size: 0.7rem;
             }
-        }
 
-        /* Announcements & Transparency Banner Section */
-        .announcements-section-banner {
-            max-width: 1400px;
-            margin: 3rem auto;
-            padding: 0 2rem;
-        }
-
-        .section-header-banner {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-            padding-bottom: 0.8rem;
-            border-bottom: 2px solid rgba(255, 215, 0, 0.3);
-        }
-
-        .section-header-banner h2 {
-            font-size: 1.3rem;
-            color: var(--accent);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-weight: 700;
-            margin: 0;
-            text-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
-        }
-
-        .section-icon {
-            font-size: 1.8rem;
-            color: var(--accent);
-        }
-
-        /* Announcements Carousel */
-        .announcements-carousel {
-            position: relative;
-            width: 100%;
-            overflow: hidden;
-            background: linear-gradient(135deg, rgba(0, 0, 0, 0.6) 0%, rgba(255, 215, 0, 0.1) 100%);
-            border: 2px solid rgba(255, 215, 0, 0.3);
-            border-radius: 8px;
-            clip-path: polygon(0 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%);
-            margin-bottom: 2rem;
-        }
-
-        .announcements-track {
-            display: flex;
-            animation: scrollAnnouncements 30s linear infinite;
-        }
-
-        .announcements-track:hover {
-            animation-play-state: paused;
-        }
-
-        .announcement-badge {
-            display: inline-block;
-            padding: 0.25rem 0.7rem;
-            background: var(--gradient);
-            color: #000;
-            font-size: 0.7rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            clip-path: polygon(0 0, calc(100% - 6px) 0, 100% 6px, 100% 100%, 6px 100%, 0 calc(100% - 6px));
-            margin-bottom: 0.5rem;
-        }
-
-        .announcement-date {
-            font-size: 0.75rem;
-            color: rgba(255, 215, 0, 0.6);
-            display: flex;
-            align-items: center;
-            gap: 0.4rem;
-        }
-
-        /* Transparency Cards */
-        .transparency-card {
-            min-width: 100%;
-            background: linear-gradient(135deg, var(--dark-2) 0%, var(--dark-3) 100%);
-            border: 2px solid rgba(255, 215, 0, 0.3);
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            transition: all 0.3s ease;
-            clip-path: polygon(0 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%);
-            max-height: 280px;
-        }
-
-        .transparency-card:hover {
-            border-color: var(--accent);
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.25);
-        }
-
-        .transparency-image {
-            width: 100%;
-            height: 160px;
-            overflow: hidden;
-            background: rgba(0, 0, 0, 0.4);
-            position: relative;
-        }
-
-        .transparency-image::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.7) 100%);
-            z-index: 1;
-        }
-
-        .transparency-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-
-        .transparency-card:hover .transparency-image img {
-            transform: scale(1.1);
-        }
-
-        .transparency-content {
-            padding: 1rem;
-            background: linear-gradient(135deg, var(--dark-1) 0%, var(--dark-2) 100%);
-        }
-
-        .transparency-title {
-            font-size: 0.9rem;
-            font-weight: 700;
-            color: var(--accent);
-            margin-bottom: 0.5rem;
-            line-height: 1.3;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        @keyframes scrollAnnouncements {
-            0% { transform: translateX(0); }
-            50% { transform: translateX(-100%); }
-            100% { transform: translateX(0); }
-        }
-
-        @media (max-width: 768px) {
-            .announcements-section-banner {
-                padding: 0 1rem;
-                margin: 2rem auto;
+            .search-container {
+                padding: 1rem;
             }
 
-            .section-header-banner h2 {
-                font-size: 1.1rem;
-                letter-spacing: 1px;
+            .search-box {
+                flex-direction: column;
+                gap: 0.5rem;
             }
 
-            .section-icon {
-                font-size: 1.5rem;
+            .search-input {
+                width: 100%;
+            }
+
+            .search-btn {
+                width: 100%;
+            }
+
+            .tabs {
+                flex-wrap: wrap;
+                gap: 0.5rem;
+            }
+
+            .tab {
+                flex: 1 1 calc(50% - 0.25rem);
+                min-width: 120px;
+            }
+
+            .timeline-item {
+                padding: 1.5rem;
+            }
+
+            .courses-grid {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            }
+
+            .gratification-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .badges-widget {
+                padding: 1.5rem;
+            }
+
+            .badge-list {
+                grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+            }
+
+            .calendar-widget {
+                padding: 1.5rem;
+            }
+
+            .ranking-card {
+                padding: 1.5rem;
+            }
+
+            .announcements-carousel {
+                margin-bottom: 1.5rem;
             }
 
             .transparency-card {
@@ -3781,111 +3764,8 @@
                 height: 140px;
             }
 
-            .transparency-content {
-                padding: 0.8rem;
-            }
-
             .transparency-title {
                 font-size: 0.8rem;
-            }
-
-            .announcement-date {
-                font-size: 0.7rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .announcements-section-banner {
-                padding: 0 0.5rem;
-            }
-
-            .section-header-banner {
-                gap: 0.5rem;
-                margin-bottom: 1rem;
-                padding-bottom: 0.6rem;
-            }
-
-            .section-header-banner h2 {
-                font-size: 0.9rem;
-            }
-
-            .section-icon {
-                font-size: 1.3rem;
-            }
-
-            .transparency-card {
-                max-height: 220px;
-            }
-
-            .transparency-image {
-                height: 120px;
-            }
-
-            .transparency-content {
-                padding: 0.6rem;
-            }
-
-            .transparency-title {
-                font-size: 0.75rem;
-            }
-
-            .announcement-badge {
-                font-size: 0.65rem;
-                padding: 0.2rem 0.5rem;
-            }
-        }
-
-        /* Header Responsive */
-        @media (max-width: 1024px) {
-            .nav-unified {
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 0.5rem;
-            }
-
-            .nav-item {
-                flex: 0 0 auto;
-            }
-
-            .logo {
-                order: -1;
-                flex: 0 0 100%;
-                justify-content: center;
-                margin-bottom: 1rem;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .header {
-                padding: 1rem 0;
-                position: relative;
-                top: auto;
-            }
-
-            .nav-unified {
-                flex-direction: column;
-                align-items: stretch;
-            }
-
-            .nav-item > a {
-                padding: 0.8rem 1rem;
-                font-size: 0.85rem;
-            }
-
-            .logo-text {
-                font-size: 0.9rem;
-            }
-
-            .logo-hexagon {
-                width: 50px;
-                height: 50px;
-            }
-
-            .dropdown-menu {
-                position: relative;
-                width: 100%;
-                top: 0;
-                margin-top: 0.5rem;
             }
         }
 
@@ -3914,37 +3794,64 @@
                 padding: 0.6rem 1rem;
                 font-size: 0.75rem;
             }
-        }
 
-        /* Content Layout Responsive */
-        @media (max-width: 768px) {
-            .content-layout {
-                padding: 1rem;
+            .profile-hero {
+                padding: 1.5rem 0.5rem;
             }
 
-            .search-container {
-                padding: 1rem;
+            .profile-card {
+                padding: 1.5rem 1rem;
             }
 
-            .search-box {
+            .avatar {
+                width: 100px;
+                height: 100px;
+                margin: 0 auto;
+            }
+
+            .profile-info {
+                text-align: center;
+                display: flex;
                 flex-direction: column;
-                gap: 0.5rem;
+                align-items: center;
             }
 
-            .search-input {
-                width: 100%;
-                padding: 0.8rem 2.5rem 0.8rem 1rem;
+            .profile-name {
+                font-size: 1.5rem;
+                gap: 0.4rem;
+                justify-content: center;
             }
 
-            .search-btn {
+            .profile-tag {
+                font-size: 0.7rem;
+                padding: 0.2rem 0.5rem;
+            }
+
+            .rank-badge {
+                font-size: 0.7rem;
+                padding: 0.3rem 0.8rem;
+            }
+
+            .profile-stats {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .stat-item {
                 width: 100%;
+            }
+
+            .stat-value {
+                font-size: 1.5rem;
+            }
+
+            .stat-label {
+                font-size: 0.65rem;
+            }
+
+            .btn {
                 padding: 0.8rem 1.5rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .content-layout {
-                padding: 0.5rem;
+                font-size: 0.8rem;
             }
 
             .search-container {
@@ -3961,60 +3868,140 @@
                 padding: 0.7rem 1.2rem;
             }
 
-            .search-icon {
-                font-size: 0.85rem;
-                left: 10px;
-            }
-        }
-
-        /* Footer Responsive */
-        @media (max-width: 768px) {
-            .footer-content {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 2rem;
+            .promotions-widget {
+                padding: 1rem;
             }
 
-            .footer-section h3 {
-                font-size: 1rem;
+            .promotions-list {
+                gap: 0.6rem;
             }
 
-            .footer-section p,
-            .footer-links li a {
-                font-size: 0.85rem;
+            .promotion-item {
+                height: 2.8rem;
+                padding: 0.5rem;
+                gap: 0.8rem;
             }
 
-            .footer-bottom p {
-                font-size: 0.7rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .footer-content {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
+            .promotion-avatar-wrapper {
+                width: 2.2rem;
+                height: 2.2rem;
+                border-width: 2px;
             }
 
-            .footer-section h3 {
+            .promotion-name {
+                font-size: 0.8rem;
+            }
+
+            .promotion-rank {
+                font-size: 0.65rem;
+            }
+
+            .tabs {
+                flex-direction: column;
+            }
+
+            .tab {
+                width: 100%;
+                min-width: auto;
+            }
+
+            .timeline-item {
+                padding: 1rem;
+            }
+
+            .timeline-title {
                 font-size: 0.9rem;
             }
 
-            .footer-section p,
-            .footer-links li a {
+            .timeline-description {
                 font-size: 0.75rem;
             }
 
-            .footer-social a {
-                width: 35px;
-                height: 35px;
+            .courses-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .course-card {
+                padding: 1.5rem;
+            }
+
+            .badges-widget {
+                padding: 1rem;
+            }
+
+            .widget-title {
                 font-size: 1rem;
             }
 
-            .footer-bottom {
-                padding-top: 1rem;
+            .badge-list {
+                grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+                gap: 0.5rem;
             }
 
-            .footer-bottom p {
+            .badge-item {
+                padding: 0.5rem;
+            }
+
+            .badge-item img {
+                width: 40px;
+                height: 40px;
+            }
+
+            .calendar-widget {
+                padding: 1rem;
+            }
+
+            .calendar-grid {
+                gap: 0.2rem;
+            }
+
+            .calendar-day {
+                padding: 0.4rem;
+                font-size: 0.75rem;
+            }
+
+            .ranking-card {
+                padding: 1rem;
+            }
+
+            .ranking-title {
+                font-size: 1rem;
+            }
+
+            .ranking-item {
+                padding: 0.8rem;
+            }
+
+            .ranking-position {
+                width: 30px;
+                height: 30px;
+                font-size: 0.8rem;
+            }
+
+            .ranking-avatar {
+                width: 35px;
+                height: 35px;
+            }
+
+            .transparency-card {
+                max-height: 220px;
+            }
+
+            .transparency-image {
+                height: 120px;
+            }
+
+            .transparency-content {
+                padding: 0.6rem;
+            }
+
+            .transparency-title {
+                font-size: 0.75rem;
+            }
+
+            .announcement-badge {
                 font-size: 0.65rem;
+                padding: 0.2rem 0.5rem;
             }
         }
     </style>
@@ -4023,6 +4010,13 @@
     <!-- Cabeçalho -->
     <header class="header">
         <div class="header-container">
+            <!-- Botão Menu Mobile -->
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
             <!-- Navegação Unificada com Logo no Meio -->
             <nav class="nav-unified">
                 <!-- Navegação Esquerda (4 links) -->
@@ -4031,11 +4025,7 @@
                         <i class="fas fa-home"></i>
                         Início
                     </a>
-                    <div class="dropdown-menu">
-                        <a href="#painel"><i class="fas fa-th-large"></i> Painel</a>
-                        <a href="#noticias"><i class="fas fa-newspaper"></i> Notícias</a>
-                        <a href="#anuncios"><i class="fas fa-bullhorn"></i> Anúncios</a>
-                    </div>
+            
                 </div>
                 
                 <div class="nav-item">
@@ -4045,9 +4035,13 @@
                     </a>
                     <div class="dropdown-menu">
                         <a href="#constituicao"><i class="fas fa-balance-scale"></i> Constituição</a>
-                        <a href="#regulamento"><i class="fas fa-book"></i> Regulamento</a>
-                        <a href="#guias"><i class="fas fa-map"></i> Guias</a>
+                        <a href="#regulamento"><i class="fas fa-book"></i> CRC</a>
+                        <a href="#guias"><i class="fas fa-map"></i> PGC</a>
                         <a href="#codigos"><i class="fas fa-gavel"></i> Códigos</a>
+                        <a href="#codigos"><i class="fas fa-gavel"></i> Anexo I</a>
+                        <a href="#codigos"><i class="fas fa-gavel"></i> Anexo II</a>
+
+
                     </div>
                 </div>
                 
@@ -4080,16 +4074,16 @@
                 <div class="logo nav-item">
                     <a href="#perfil" class="logo-link">
                         <div class="logo-hexagon">
-                        <img src="https://www.habbo.com.br/habbo-imaging/avatarimage?hb=image&action=&gesture=sml&size=b&headonly=1&user=Sloris&direction=3&head_direction=3&size=s" alt="Avatar Habbo">
+                            <img src="https://i.imgur.com/8ZJO8Yw_d.webp?maxwidth=760&fidelity=grand" alt="PAB Logo">
                         </div>
-                        <span class="logo-text">Sloris</span>
+                        <span class="logo-text">PABSystem</span>
                     </a>
                     <div class="dropdown-menu logo-dropdown">
                         <a href="#minha-conta"><i class="fas fa-user"></i> Minha Conta</a>
                         <a href="#configuracoes"><i class="fas fa-cog"></i> Configurações</a>
                         <a href="#notificacoes"><i class="fas fa-bell"></i> Notificações</a>
                         <a href="#seguranca"><i class="fas fa-shield-alt"></i> Segurança</a>
-                        <hr style="margin: 0.5rem 0; border-color: rgba(255, 215, 0, 0.2);">
+                        <hr style="margin: 0.5rem 0; border-color: rgba(17, 50, 66, 0.2);">
                         <a href="#sair"><i class="fas fa-sign-out-alt"></i> Sair</a>
                     </div>
                 </div>
@@ -4146,7 +4140,63 @@
         </div>
     </header>
 
-    <!-- Área de Conteúdo Principal -->
+    <!-- Seção Hero do Perfil -->
+    <section class="profile-hero">
+        <div class="profile-container">
+            <div class="profile-card">
+                <div class="avatar-section">
+                    <div class="avatar">
+                        <img src="https://www.habbo.com.br/habbo-imaging/avatarimage?img_format=gif&user=Sloris&direction=3&head_direction=3&size=l" alt="Avatar">
+                    </div>
+                    <div class="status-badge">
+                        <span class="status-dot"></span>
+                        Online
+                    </div>
+                </div>
+
+                <div class="profile-info">
+                    <div class="profile-name">
+                        Sloris <span class="profile-tag">[SLS]</span>
+                        <span class="rank-badge">Comandante Supremo</span>
+                    </div>
+
+                    <div class="profile-stats">
+                        <div class="stat-item">
+                            <div class="stat-label">Dias na Patente</div>
+                            <div class="stat-value">1241</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Dias Ativos</div>
+                            <div class="stat-value">2845</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Turnos</div>
+                            <div class="stat-value">M | T | N</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Medalhas</div>
+                            <div class="stat-value">145 (7)</div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="profile-actions">
+                    <button class="btn btn-primary">
+                        <span>✉️</span>
+                        Mensagem
+                    </button>
+                    <button class="btn btn-secondary">
+                        <span>🔗</span>
+                        Copiar TAG
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Abas -->
     <div class="content-layout">
         <div class="main-content">
             <!-- Caixa de Busca -->
@@ -4156,261 +4206,510 @@
                     <input type="text" class="search-input" placeholder="Buscar usuário por nick...">
                     <button class="search-btn">
                         <i class="fas fa-crosshairs"></i>
-                        Localizar
+                        Buscar
                     </button>
                 </div>
             </div>
 
-            <!-- Seção de Divisões / Caixas -->
-            <div class="divisions-section">
-            
+            <div class="tabs">
+                <button class="tab active" data-tab="historico">📜 Histórico</button>
+                <button class="tab" data-tab="gratificacoes">🏆 Gratificações</button>
+                <button class="tab" data-tab="cursos">🎓 Cursos</button>
+            </div>
 
-                <div class="divisions-grid">
-                    <!-- Caixa 1: Academia Policial Militar -->
-                    <a class="division-box" href="/DPanel/funcao/lista/2">
-                        <div class="division-icon">
-                            <i class="fas fa-graduation-cap"></i>
+            <div class="tab-content" id="tab-historico">
+                <!-- Timeline Content -->
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-header">
+                            <span class="timeline-user">Sloris</span> publicou uma <span class="timeline-badge ap">AP</span> Acompanhamento Aprovado
                         </div>
-                        <h3>Academia Policial Militar</h3>
-                        <p>Formação e treinamento de policiais militares</p>
-                        <div class="division-stats">
-                            <div class="stat-item">
-                                <i class="fas fa-hashtag"></i>
-                                <span>ID: #2</span>
-                            </div>
-                            <div class="stat-item">
-                                <i class="fas fa-check-circle"></i>
-                                <span class="status-ativado">Ativado</span>
-                            </div>
+                        <div class="timeline-date">15 de February de 2025 às 17:34</div>
+                        <div class="timeline-content">
+                            <div class="timeline-title">[AP] Acompanhamento Aprovado</div>
+                            <div class="timeline-status approved">Aprovado</div>
+                            <div class="timeline-description">Exemplo: Alcançou a nota suficiente para ter seu acompanhamento aprovado</div>
                         </div>
-                        <button class="division-btn">
-                            <i class="fas fa-arrow-right"></i>
-                            Acessar
-                        </button>
-                    </a>
+                    </div>
 
-                    <!-- Caixa 2: Departamento de Comunicação -->
-                    <a class="division-box" href="/DPanel/funcao/lista/3">
-                        <div class="division-icon">
-                            <i class="fas fa-bullhorn"></i>
+                    <div class="timeline-item">
+                        <div class="timeline-header">
+                            <span class="timeline-user">Sloris</span> recebeu uma <span class="timeline-badge promo">Promoção</span>
                         </div>
-                        <h3>Departamento de Comunicação</h3>
-                        <p>Divulgação e relações públicas institucionais</p>
-                        <div class="division-stats">
-                            <div class="stat-item">
-                                <i class="fas fa-hashtag"></i>
-                                <span>ID: #3</span>
-                            </div>
-                            <div class="stat-item">
-                                <i class="fas fa-check-circle"></i>
-                                <span class="status-ativado">Ativado</span>
-                            </div>
+                        <div class="timeline-date">10 de February de 2025 às 14:22</div>
+                        <div class="timeline-content">
+                            <div class="timeline-title">Promovido a Comandante Supremo</div>
+                            <div class="timeline-status approved">Concluído</div>
+                            <div class="timeline-description">Parabéns pela promoção! Continue com o excelente trabalho.</div>
                         </div>
-                        <button class="division-btn">
-                            <i class="fas fa-arrow-right"></i>
-                            Acessar
-                        </button>
-                    </a>
+                    </div>
 
-                    <!-- Caixa 3: Corregedoria -->
-                    <a class="division-box" href="/DPanel/funcao/lista/4">
-                        <div class="division-icon">
-                            <i class="fas fa-gavel"></i>
+                    <div class="timeline-item">
+                        <div class="timeline-header">
+                            <span class="timeline-user">Sloris</span> completou um <span class="timeline-badge curso">Curso</span>
                         </div>
-                        <h3>Corregedoria</h3>
-                        <p>Fiscalização e aplicação da disciplina militar</p>
-                        <div class="division-stats">
-                            <div class="stat-item">
-                                <i class="fas fa-hashtag"></i>
-                                <span>ID: #4</span>
-                            </div>
-                            <div class="stat-item">
-                                <i class="fas fa-check-circle"></i>
-                                <span class="status-ativado">Ativado</span>
-                            </div>
+                        <div class="timeline-date">05 de February de 2025 às 18:45</div>
+                        <div class="timeline-content">
+                            <div class="timeline-title">Curso de Formação de Oficiais (CFO)</div>
+                            <div class="timeline-status approved">Aprovado</div>
+                            <div class="timeline-description">Obteve nota 9.5/10 no curso. Certificado emitido com sucesso.</div>
                         </div>
-                        <button class="division-btn">
-                            <i class="fas fa-arrow-right"></i>
-                            Acessar
-                        </button>
-                    </a>
+                    </div>
 
-                    <!-- Caixa 4: Departamento de Recursos Humanos -->
-                    <a class="division-box" href="/DPanel/funcao/lista/5">
-                        <div class="division-icon">
-                            <i class="fas fa-users-cog"></i>
+                    <div class="timeline-item">
+                        <div class="timeline-header">
+                            <span class="timeline-user">Sloris</span> recebeu uma <span class="timeline-badge gratif">Gratificação</span>
                         </div>
-                        <h3>Departamento de Recursos Humanos</h3>
-                        <p>Gestão de pessoal e desenvolvimento profissional</p>
-                        <div class="division-stats">
-                            <div class="stat-item">
-                                <i class="fas fa-hashtag"></i>
-                                <span>ID: #5</span>
-                            </div>
-                            <div class="stat-item">
-                                <i class="fas fa-check-circle"></i>
-                                <span class="status-ativado">Ativado</span>
-                            </div>
+                        <div class="timeline-date">28 de January de 2025 às 20:15</div>
+                        <div class="timeline-content">
+                            <div class="timeline-title">Medalha de Honra ao Mérito</div>
+                            <div class="timeline-status approved">Concedido</div>
+                            <div class="timeline-description">Por dedicação exemplar e contribuições significativas à instituição.</div>
                         </div>
-                        <button class="division-btn">
-                            <i class="fas fa-arrow-right"></i>
-                            Acessar
-                        </button>
-                    </a>
+                    </div>
 
-                    <!-- Caixa 5: Batalhão de Ações e Comandos -->
-                    <a class="division-box" href="/DPanel/funcao/lista/20">
-                        <div class="division-icon">
-                            <i class="fas fa-crosshairs"></i>
+                    <div class="timeline-item">
+                        <div class="timeline-header">
+                            <span class="timeline-user">Sloris</span> aplicou uma <span class="timeline-badge aula">Aula</span>
                         </div>
-                        <h3>Batalhão de Ações e Comandos</h3>
-                        <p>Operações táticas e missões especiais</p>
-                        <div class="division-stats">
-                            <div class="stat-item">
-                                <i class="fas fa-hashtag"></i>
-                                <span>ID: #20</span>
-                            </div>
-                            <div class="stat-item">
-                                <i class="fas fa-check-circle"></i>
-                                <span class="status-ativado">Ativado</span>
-                            </div>
+                        <div class="timeline-date">20 de January de 2025 às 19:30</div>
+                        <div class="timeline-content">
+                            <div class="timeline-title">Aula de Formação Inicial - Turma 145</div>
+                            <div class="timeline-status approved">Concluída</div>
+                            <div class="timeline-description">12 recrutas aprovados. Duração: 45 minutos.</div>
                         </div>
-                        <button class="division-btn">
-                            <i class="fas fa-arrow-right"></i>
-                            Acessar
-                        </button>
-                    </a>
-
-                    <!-- Caixa 6: Coordenadoria de Recursos Especiais -->
-                    <a class="division-box" href="/DPanel/funcao/lista/21">
-                        <div class="division-icon">
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <h3>Coordenadoria de Recursos Especiais</h3>
-                        <p>Gestão de recursos e operações especializadas</p>
-                        <div class="division-stats">
-                            <div class="stat-item">
-                                <i class="fas fa-hashtag"></i>
-                                <span>ID: #21</span>
-                            </div>
-                            <div class="stat-item">
-                                <i class="fas fa-check-circle"></i>
-                                <span class="status-ativado">Ativado</span>
-                            </div>
-                        </div>
-                        <button class="division-btn">
-                            <i class="fas fa-arrow-right"></i>
-                            Acessar
-                        </button>
-                    </a>
-
-                    <!-- Caixa 7: Inteligência - P2 -->
-                    <a class="division-box" href="/DPanel/funcao/lista/177">
-                        <div class="division-icon">
-                            <i class="fas fa-user-secret"></i>
-                        </div>
-                        <h3>Inteligência - P2</h3>
-                        <p>Análise estratégica e operações de inteligência</p>
-                        <div class="division-stats">
-                            <div class="stat-item">
-                                <i class="fas fa-hashtag"></i>
-                                <span>ID: #177</span>
-                            </div>
-                            <div class="stat-item">
-                                <i class="fas fa-check-circle"></i>
-                                <span class="status-ativado">Ativado</span>
-                            </div>
-                        </div>
-                        <button class="division-btn">
-                            <i class="fas fa-arrow-right"></i>
-                            Acessar
-                        </button>
-                    </a>
-
-                    <!-- Caixa 8: Departamento Financeiro -->
-                    <a class="division-box" href="/DPanel/funcao/lista/355">
-                        <div class="division-icon">
-                            <i class="fas fa-dollar-sign"></i>
-                        </div>
-                        <h3>Departamento Financeiro</h3>
-                        <p>Gestão orçamentária e controle financeiro</p>
-                        <div class="division-stats">
-                            <div class="stat-item">
-                                <i class="fas fa-hashtag"></i>
-                                <span>ID: #355</span>
-                            </div>
-                            <div class="stat-item">
-                                <i class="fas fa-check-circle"></i>
-                                <span class="status-ativado">Ativado</span>
-                            </div>
-                        </div>
-                        <button class="division-btn">
-                            <i class="fas fa-arrow-right"></i>
-                            Acessar
-                        </button>
-                    </a>
+                    </div>
                 </div>
             </div>
+
+            <div class="tab-content" id="tab-gratificacoes" style="display: none;">
+                <div class="gratification-grid">
+                    <div class="gratification-card">
+                        <div class="gratification-title">Medalha de Ouro</div>
+                        <div class="gratification-date">18 de Outubro, 2025</div>
+                        <div class="gratification-desc">Reconhecimento por excelência em serviço e dedicação à corporação.</div>
+                    </div>
+                    <div class="gratification-card">
+                        <div class="gratification-title">Medalha de Prata</div>
+                        <div class="gratification-date">15 de Setembro, 2025</div>
+                        <div class="gratification-desc">Por contribuições significativas ao desenvolvimento da instituição.</div>
+                    </div>
+                    <div class="gratification-card">
+                        <div class="gratification-title">Condecoração Especial</div>
+                        <div class="gratification-date">10 de Agosto, 2025</div>
+                        <div class="gratification-desc">Reconhecimento por ação heroica e liderança exemplar.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-content" id="tab-cursos" style="display: none;">
+                <div class="courses-grid">
+                    <div class="course-card">
+                        <div class="course-icon">🎓</div>
+                        <div class="course-name">[CFO] Módulo II ®</div>
+                        <span class="course-status status-pending">Pendente</span>
+                    </div>
+                    <div class="course-card">
+                        <div class="course-icon">📚</div>
+                        <div class="course-name">[EsFP] Curso de Formação para Sgt. e Det.</div>
+                        <span class="course-status status-completed">Concluído</span>
+                    </div>
+                    <div class="course-card">
+                        <div class="course-icon">🎯</div>
+                        <div class="course-name">[S.OM] Curso de Aprimoramento de Praças</div>
+                        <span class="course-status status-completed">Concluído</span>
+                    </div>
+                    <div class="course-card">
+                        <div class="course-icon">⚔️</div>
+                        <div class="course-name">[AP] Acompanhamento Aprovado</div>
+                        <span class="course-status status-pending">Pendente</span>
+                    </div>
+                    <div class="course-card">
+                        <div class="course-icon">🛡️</div>
+                        <div class="course-name">[CCE] Exame de Executivos Superiores</div>
+                        <span class="course-status status-pending">Pendente</span>
+                    </div>
+                    <div class="course-card">
+                        <div class="course-icon">📖</div>
+                        <div class="course-name">[CFO] Módulo I ®</div>
+                        <span class="course-status status-completed">Concluído</span>
+                    </div>
+                </div>
+            </div>
+
+
+     
+ </div>        <!-- Sidebar -->
+        <div class="sidebar">
+    
+            <!-- Emblemas e Funções Widget -->
+            <div class="badges-widget">                
+                <div class="badge-group">
+                    <h4>Últimos Emblemas adquiridos</h4>
+                    <div class="badge-list">
+                        <div class="badge-item" title="Emblema de Honra" data-bs-toggle="tooltip">
+                            <img src="https://i.imgur.com/8ZJO8Yw_d.webp?maxwidth=760&fidelity=grand" alt="Emblema">
+                        </div>
+                        <div class="badge-item" title="Medalha de Serviço" data-bs-toggle="tooltip">
+                            <img src="https://i.imgur.com/8ZJO8Yw_d.webp?maxwidth=760&fidelity=grand" alt="Emblema">
+                        </div>
+                        <div class="badge-item" title="Condecoração Especial" data-bs-toggle="tooltip">
+                            <img src="https://i.imgur.com/8ZJO8Yw_d.webp?maxwidth=760&fidelity=grand" alt="Emblema">
+                        </div>
+                        <div class="badge-item" title="Estrela de Ouro" data-bs-toggle="tooltip">
+                            <img src="https://i.imgur.com/8ZJO8Yw_d.webp?maxwidth=760&fidelity=grand" alt="Emblema">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="badge-group">
+                    <h4>Minhas funções</h4>
+                    <div class="badge-list">
+                        <div class="badge-item" title="Função APM" data-bs-toggle="tooltip">
+                            <img src="https://i.imgur.com/8ZJO8Yw_d.webp?maxwidth=760&fidelity=grand" alt="Função">
+                        </div>
+                        <div class="badge-item" title="Função CSP" data-bs-toggle="tooltip">
+                            <img src="https://i.imgur.com/8ZJO8Yw_d.webp?maxwidth=760&fidelity=grand" alt="Função">
+                        </div>
+                        <div class="badge-item" title="Função DCM" data-bs-toggle="tooltip">
+                            <img src="https://i.imgur.com/8ZJO8Yw_d.webp?maxwidth=760&fidelity=grand" alt="Função">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+    
+            <!-- Destaques Widget com Filtros -->
+            <div class="highlights-widget">
+                <div class="highlights-header">
+                    <h3 class="widget-title">
+                        <i class="fas fa-trophy me-2"></i>Top Usuários
+                    </h3>
+                    <div class="highlights-filters">
+                        <button class="filter-btn active" data-filter="presenca" title="Presença Geral">
+                            <i class="fas fa-calendar-check"></i>
+                        </button>
+                        <button class="filter-btn" data-filter="base" title="Presença em Base">
+                            <i class="fas fa-home"></i>
+                        </button>
+                        <button class="filter-btn" data-filter="aulas" title="Aulas Aplicadas">
+                            <i class="fas fa-chalkboard-teacher"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="highlights-list active" data-category="presenca">
+                    <div class="highlight-user-item">
+                        <div class="highlight-rank">1º</div>
+                        <img src="https://www.habbo.com.br/habbo-imaging/avatarimage?hb=image&action=&gesture=sml&size=b&headonly=1&user=Sloris&direction=3&head_direction=3&size=s" class="highlight-user-avatar" alt="">
+                        <div class="highlight-user-info">
+                            <div class="highlight-user-name">Sloris</div>
+                            <div class="highlight-user-value">98.5%</div>
+                        </div>
+                    </div>
+                    <div class="highlight-user-item">
+                        <div class="highlight-rank">2º</div>
+                        <img src="https://www.habbo.com.br/habbo-imaging/avatarimage?hb=image&action=&gesture=sml&size=b&headonly=1&user=m4t3uS...&direction=3&head_direction=3&size=s" class="highlight-user-avatar" alt="">
+                        <div class="highlight-user-info">
+                            <div class="highlight-user-name">m4t3uS...</div>
+                            <div class="highlight-user-value">96.3%</div>
+                        </div>
+                    </div>
+                    <div class="highlight-user-item">
+                        <div class="highlight-rank">3º</div>
+                        <img src="https://www.habbo.com.br/habbo-imaging/avatarimage?hb=image&action=&gesture=sml&size=b&headonly=1&user=Tata_Major&direction=3&head_direction=3&size=s" class="highlight-user-avatar" alt="">
+                        <div class="highlight-user-info">
+                            <div class="highlight-user-name">Tata_Major</div>
+                            <div class="highlight-user-value">94.7%</div>
+                        </div>
+                    </div>
+                    <div class="highlight-user-item">
+                        <div class="highlight-rank">4º</div>
+                        <img src="https://www.habbo.com.br/habbo-imaging/avatarimage?hb=image&action=&gesture=sml&size=b&headonly=1&user=gu_t2.ofc&direction=3&head_direction=3&size=s" class="highlight-user-avatar" alt="">
+                        <div class="highlight-user-info">
+                            <div class="highlight-user-name">gu_t2.ofc</div>
+                            <div class="highlight-user-value">92.1%</div>
+                        </div>
+                    </div>
+                    <div class="highlight-user-item">
+                        <div class="highlight-rank">5º</div>
+                        <img src="https://www.habbo.com.br/habbo-imaging/avatarimage?hb=image&action=&gesture=sml&size=b&headonly=1&user=hero_few&direction=3&head_direction=3&size=s" class="highlight-user-avatar" alt="">
+                        <div class="highlight-user-info">
+                            <div class="highlight-user-name">hero_few</div>
+                            <div class="highlight-user-value">89.4%</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="highlights-list" data-category="base">
+                    <div class="highlight-user-item">
+                        <div class="highlight-rank">1º</div>
+                        <img src="https://www.habbo.com.br/habbo-imaging/avatarimage?hb=image&action=&gesture=sml&size=b&headonly=1&user=m4t3uS...&direction=3&head_direction=3&size=s" class="highlight-user-avatar" alt="">
+                        <div class="highlight-user-info">
+                            <div class="highlight-user-name">m4t3uS...</div>
+                            <div class="highlight-user-value">247h</div>
+                        </div>
+                    </div>
+                    <div class="highlight-user-item">
+                        <div class="highlight-rank">2º</div>
+                        <img src="https://www.habbo.com.br/habbo-imaging/avatarimage?hb=image&action=&gesture=sml&size=b&headonly=1&user=gu_t2.ofc&direction=3&head_direction=3&size=s" class="highlight-user-avatar" alt="">
+                        <div class="highlight-user-info">
+                            <div class="highlight-user-name">gu_t2.ofc</div>
+                            <div class="highlight-user-value">189h</div>
+                        </div>
+                    </div>
+                    <div class="highlight-user-item">
+                        <div class="highlight-rank">3º</div>
+                        <img src="https://www.habbo.com.br/habbo-imaging/avatarimage?hb=image&action=&gesture=sml&size=b&headonly=1&user=Sloris&direction=3&head_direction=3&size=s" class="highlight-user-avatar" alt="">
+                        <div class="highlight-user-info">
+                            <div class="highlight-user-name">Sloris</div>
+                            <div class="highlight-user-value">156h</div>
+                        </div>
+                    </div>
+                    <div class="highlight-user-item">
+                        <div class="highlight-rank">4º</div>
+                        <img src="https://www.habbo.com.br/habbo-imaging/avatarimage?hb=image&action=&gesture=sml&size=b&headonly=1&user=hero_few&direction=3&head_direction=3&size=s" class="highlight-user-avatar" alt="">
+                        <div class="highlight-user-info">
+                            <div class="highlight-user-name">hero_few</div>
+                            <div class="highlight-user-value">142h</div>
+                        </div>
+                    </div>
+                    <div class="highlight-user-item">
+                        <div class="highlight-rank">5º</div>
+                        <img src="https://www.habbo.com.br/habbo-imaging/avatarimage?hb=image&action=&gesture=sml&size=b&headonly=1&user=Tata_Major&direction=3&head_direction=3&size=s" class="highlight-user-avatar" alt="">
+                        <div class="highlight-user-info">
+                            <div class="highlight-user-name">Tata_Major</div>
+                            <div class="highlight-user-value">128h</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="highlights-list" data-category="aulas">
+                    <div class="highlight-user-item">
+                        <div class="highlight-rank">1º</div>
+                        <img src="https://www.habbo.com.br/habbo-imaging/avatarimage?hb=image&action=&gesture=sml&size=b&headonly=1&user=Tata_Major&direction=3&head_direction=3&size=s" class="highlight-user-avatar" alt="">
+                        <div class="highlight-user-info">
+                            <div class="highlight-user-name">Tata_Major</div>
+                            <div class="highlight-user-value">34 aulas</div>
+                        </div>
+                    </div>
+                    <div class="highlight-user-item">
+                        <div class="highlight-rank">2º</div>
+                        <img src="https://www.habbo.com.br/habbo-imaging/avatarimage?hb=image&action=&gesture=sml&size=b&headonly=1&user=Sloris&direction=3&head_direction=3&size=s" class="highlight-user-avatar" alt="">
+                        <div class="highlight-user-info">
+                            <div class="highlight-user-name">Sloris</div>
+                            <div class="highlight-user-value">28 aulas</div>
+                        </div>
+                    </div>
+                    <div class="highlight-user-item">
+                        <div class="highlight-rank">3º</div>
+                        <img src="https://www.habbo.com.br/habbo-imaging/avatarimage?hb=image&action=&gesture=sml&size=b&headonly=1&user=hero_few&direction=3&head_direction=3&size=s" class="highlight-user-avatar" alt="">
+                        <div class="highlight-user-info">
+                            <div class="highlight-user-name">hero_few</div>
+                            <div class="highlight-user-value">21 aulas</div>
+                        </div>
+                    </div>
+                    <div class="highlight-user-item">
+                        <div class="highlight-rank">4º</div>
+                        <img src="https://www.habbo.com.br/habbo-imaging/avatarimage?hb=image&action=&gesture=sml&size=b&headonly=1&user=m4t3uS...&direction=3&head_direction=3&size=s" class="highlight-user-avatar" alt="">
+                        <div class="highlight-user-info">
+                            <div class="highlight-user-name">m4t3uS...</div>
+                            <div class="highlight-user-value">18 aulas</div>
+                        </div>
+                    </div>
+                    <div class="highlight-user-item">
+                        <div class="highlight-rank">5º</div>
+                        <img src="https://www.habbo.com.br/habbo-imaging/avatarimage?hb=image&action=&gesture=sml&size=b&headonly=1&user=gu_t2.ofc&direction=3&head_direction=3&size=s" class="highlight-user-avatar" alt="">
+                        <div class="highlight-user-info">
+                            <div class="highlight-user-name">gu_t2.ofc</div>
+                            <div class="highlight-user-value">15 aulas</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ranking Widget -->
+            <div class="ranking-card">
+                <h3 class="ranking-title">🏆 Top Usuários</h3>
+                <div class="ranking-list">
+                    <div class="ranking-item">
+                        <div class="ranking-position">1º</div>
+                        <img src="https://www.habbo.com.br/habbo-imaging/avatarimage?img_format=gif&user=gu_t2.ofc&direction=2&head_direction=2&size=b" class="ranking-avatar" alt="">
+                        <div class="ranking-info">
+                            <div class="ranking-name">gu_t2.ofc</div>
+                            <div class="ranking-value">23h 37min</div>
+                        </div>
+                    </div>
+                    <div class="ranking-item">
+                        <div class="ranking-position">2º</div>
+                        <img src="https://www.habbo.com.br/habbo-imaging/avatarimage?img_format=gif&user=HabboH%2C%3A&direction=2&head_direction=2&size=b" class="ranking-avatar" alt="">
+                        <div class="ranking-info">
+                            <div class="ranking-name">HabboH,:</div>
+                            <div class="ranking-value">21h 58min</div>
+                        </div>
+                    </div>
+                    <div class="ranking-item">
+                        <div class="ranking-position">3º</div>
+                        <img src="https://www.habbo.com.br/habbo-imaging/avatarimage?img_format=gif&user=hero_few&direction=2&head_direction=2&size=b" class="ranking-avatar" alt="">
+                        <div class="ranking-info">
+                            <div class="ranking-name">hero_few</div>
+                            <div class="ranking-value">16h 57min</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
 
-    <!-- Seção de Usuários e Calendário -->
+    <!-- Users & Calendar Section -->
     <section class="users-calendar-section">
         <div class="users-calendar-wrapper">
-            <!-- Container de Usuários Ativos -->
+            <!-- Active Users Container -->
             <div class="users-active-container">
                 <div class="users-active-header">
                     <span class="users-active-icon"><i class="fas fa-users"></i></span>
                     <h2>Usuários Ativos no Sistema</h2>
                 </div>
-            <div class="users-grid">
-                <div class="user-active-card">
-                    <img src="https://www.habbo.com.br/habbo-imaging/avatarimage?img_format=gif&user=Sloris&direction=2&head_direction=2&size=l" class="user-active-avatar-large" alt="Sloris">
-                    <div class="user-active-name">Sloris</div>
-                    <div class="user-active-rank">Comandante Supremo</div>
+                <div class="list-users" id="site">
+                    <a href="/?nickname=Sloris" data-tooltip="Sloris" class="habbo-user circle">
+                        <span class="habbo-imager" style="background-image:url(https://www.habbo.com.br/habbo-imaging/avatarimage?img_format=gif&user=Sloris&direction=2&head_direction=2&size=b)"></span>
+                        <div class="user-active-name">Sloris</div>
+                        <div class="user-active-rank">Major</div>
+                    </a>
+                    <a href="/?nickname=:Daniele0011" data-tooltip=":Daniele0011" class="habbo-user circle">
+                        <span class="habbo-imager" style="background-image:url(https://www.habbo.com.br/habbo-imaging/avatarimage?img_format=gif&user=%3ADaniele0011&direction=2&head_direction=2&size=b)"></span>
+                        <div class="user-active-name">:Daniele0011</div>
+                        <div class="user-active-rank">Major</div>
+                    </a>
+                    <a href="/?nickname=Elbielzinho" data-tooltip="Elbielzinho" class="habbo-user circle">
+                        <span class="habbo-imager" style="background-image:url(https://www.habbo.com.br/habbo-imaging/avatarimage?img_format=gif&user=Elbielzinho&direction=2&head_direction=2&size=b)"></span>
+                        <div class="user-active-name">Elbielzinho</div>
+                        <div class="user-active-rank">Major</div>
+                    </a>
+                    <a href="/?nickname=Pennyyzinhah" data-tooltip="Pennyyzinhah" class="habbo-user circle">
+                        <span class="habbo-imager" style="background-image:url(https://www.habbo.com.br/habbo-imaging/avatarimage?img_format=gif&user=Pennyyzinhah&direction=2&head_direction=2&size=b)"></span>
+                        <div class="user-active-name">Pennyyzinhah</div>
+                        <div class="user-active-rank">Major</div>
+                    </a>
+                    <a href="/?nickname=DeimorK." data-tooltip="DeimorK." class="habbo-user circle">
+                        <span class="habbo-imager" style="background-image:url(https://www.habbo.com.br/habbo-imaging/avatarimage?img_format=gif&user=DeimorK.&direction=2&head_direction=2&size=b)"></span>
+                        <div class="user-active-name">DeimorK.</div>
+                        <div class="user-active-rank">Major</div>
+                    </a>
+                    <a href="/?nickname=Frank1234mm." data-tooltip="Frank1234mm." class="habbo-user circle">
+                        <span class="habbo-imager" style="background-image:url(https://www.habbo.com.br/habbo-imaging/avatarimage?img_format=gif&user=Frank1234mm.&direction=2&head_direction=2&size=b)"></span>
+                        <div class="user-active-name">Frank1234mm.</div>
+                        <div class="user-active-rank">Major</div>
+                    </a>
                 </div>
-                <div class="user-active-card">
-                    <img src="https://www.habbo.com.br/habbo-imaging/avatarimage?img_format=gif&user=m4t3uS...&direction=2&head_direction=2&size=l" class="user-active-avatar-large" alt="m4t3uS">
-                    <div class="user-active-name">m4t3uS...</div>
-                    <div class="user-active-rank">General de Exército</div>
-                </div>
-                <div class="user-active-card">
-                    <img src="https://www.habbo.com.br/habbo-imaging/avatarimage?img_format=gif&user=Gabriel_Feitosa&direction=2&head_direction=2&size=l" class="user-active-avatar-large" alt="Gabriel">
-                    <div class="user-active-name">Gabriel_Feitosa</div>
-                    <div class="user-active-rank">Coronel</div>
-                </div>
-                <div class="user-active-card">
-                    <img src="https://www.habbo.com.br/habbo-imaging/avatarimage?img_format=gif&user=-Caroline&direction=2&head_direction=2&size=l" class="user-active-avatar-large" alt="Caroline">
-                    <div class="user-active-name">-Caroline</div>
-                    <div class="user-active-rank">Tenente-Coronel</div>
-                </div>
-                <div class="user-active-card">
-                    <img src="https://www.habbo.com.br/habbo-imaging/avatarimage?img_format=gif&user=.ThiagoLiberato&direction=2&head_direction=2&size=l" class="user-active-avatar-large" alt="Thiago">
-                    <div class="user-active-name">.ThiagoLiberato</div>
-                    <div class="user-active-rank">Major</div>
-                </div>
-                <div class="user-active-card">
-                    <img src="https://www.habbo.com.br/habbo-imaging/avatarimage?img_format=gif&user=JoaoPedro&direction=2&head_direction=2&size=l" class="user-active-avatar-large" alt="JoaoPedro">
-                    <div class="user-active-name">JoaoPedro</div>
-                    <div class="user-active-rank">Capitão</div>
-                </div>
-                <div class="user-active-card">
-                    <img src="https://www.habbo.com.br/habbo-imaging/avatarimage?img_format=gif&user=MariaClara&direction=2&head_direction=2&size=l" class="user-active-avatar-large" alt="Maria">
-                    <div class="user-active-name">MariaClara</div>
-                    <div class="user-active-rank">Tenente</div>
-                </div>
-                <div class="user-active-card">
-                    <img src="https://www.habbo.com.br/habbo-imaging/avatarimage?img_format=gif&user=RodrigoSilva&direction=2&head_direction=2&size=l" class="user-active-avatar-large" alt="Rodrigo">
-                    <div class="user-active-name">RodrigoSilva</div>
-                    <div class="user-active-rank">Subtenente</div>
-                </div>
-            </div>
             </div>
 
-            <!-- Barra Lateral do Calendário -->
+            <div class="sidebar">
+            <div class="promotions-section">
+                <div class="section-header">
+                    <span class="section-icon"><i class="fas fa-star"></i></span>
+                    <h2>Últimas Promoções</h2>
+                </div>
+
+                    <div class="promotions-list">
+                        <div class="promotion-item">
+                            <div class="promotion-avatar-wrapper">
+                                <img src="https://www.habbo.com.br/habbo-imaging/avatarimage?user=Gabe_M&direction=2&head_direction=3&img_format=png&gesture=sml&size=b" alt="Gabe_M">
+                            </div>
+                            <div class="promotion-info">
+                                <div class="promotion-name">Gabe_M</div>
+                                <div class="promotion-rank">Promovido a <span class="promotion-rank-name">Soldado</span></div>
+                            </div>
+                        </div>
+
+                        <div class="promotion-item">
+                            <div class="promotion-avatar-wrapper">
+                                <img src="https://www.habbo.com.br/habbo-imaging/avatarimage?user=gyuigyuii&direction=2&head_direction=3&img_format=png&gesture=sml&size=b" alt="gyuigyuii">
+                            </div>
+                            <div class="promotion-info">
+                                <div class="promotion-name">gyuigyuii</div>
+                                <div class="promotion-rank">Promovido a <span class="promotion-rank-name">Soldado</span></div>
+                            </div>
+                        </div>
+
+                        <div class="promotion-item">
+                            <div class="promotion-avatar-wrapper">
+                                <img src="https://www.habbo.com.br/habbo-imaging/avatarimage?user=estiloys&direction=2&head_direction=3&img_format=png&gesture=sml&size=b" alt="estiloys">
+                            </div>
+                            <div class="promotion-info">
+                                <div class="promotion-name">estiloys</div>
+                                <div class="promotion-rank">Promovido a <span class="promotion-rank-name">Soldado</span></div>
+                            </div>
+                        </div>
+
+                        <div class="promotion-item">
+                            <div class="promotion-avatar-wrapper">
+                                <img src="https://www.habbo.com.br/habbo-imaging/avatarimage?user=ray_linda&direction=2&head_direction=3&img_format=png&gesture=sml&size=b" alt="ray_linda">
+                            </div>
+                            <div class="promotion-info">
+                                <div class="promotion-name">ray_linda</div>
+                                <div class="promotion-rank">Promovido a <span class="promotion-rank-name">Soldado</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+ <!-- Seção de Abas -->
+    <div class="content-layout">
+        <div class="main-content">
+            <!-- Caixa de Busca -->
+      
+            <!-- Seção de Anúncios e Transparência -->
+            <section class="announcements-section">
+                    <div class="section-header">
+                        <span class="section-icon"><i class="fas fa-bullhorn"></i></span>
+                        <h2>Anúncios & Transparência</h2>
+                    </div>
+
+                    <div class="announcements-carousel">
+                        <div class="announcements-track">
+                            <div class="transparency-card">
+                                <div class="transparency-image">
+                                    <img src="https://pabsystem.com/template/uploads/plugins/publicacao/febcf3665e712410d3e86cf098e94706.png" alt="Diário Oficial">
+                                </div>
+                                <div class="transparency-content">
+                                    <span class="announcement-badge">Transparência</span>
+                                    <h3 class="transparency-title">Diário Oficial da Corregedoria - Nº 010/2025</h3>
+                                    <div class="announcement-date">
+                                        <i class="far fa-calendar-alt"></i> 18 de Outubro, 2025
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="transparency-card">
+                                <div class="transparency-image">
+                                    <img src="https://i.imgur.com/rRPqbpq.png" alt="Diário Oficial">
+                                </div>
+                                <div class="transparency-content">
+                                    <span class="announcement-badge">Transparência</span>
+                                    <h3 class="transparency-title">DIÁRIO OFICIAL DA POLÍCIA - Nº18/2025</h3>
+                                    <div class="announcement-date">
+                                        <i class="far fa-calendar-alt"></i> 12 de Outubro, 2025
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>                
+            </section>
+        </div>
+
+        <!-- Sidebar com Últimas Promoções -->
+         
+            <!-- Calendar Sidebar -->
             <div class="calendar-sidebar-container">
                 <div class="calendar-sidebar-header">
-                    <span class="users-active-icon"><i class="fas fa-calendar-alt"></i></span>
+                    <span class="users-active-icon"><img src="https://i.imgur.com/2qaQTg9.png" alt="Calendário" style="width: 20px; height: 20px;"></span>
                     <h3>Calendário</h3>
                 </div>
                 <div class="calendar-compact">
@@ -4470,54 +4769,16 @@
                 </div>
             </div>
         </div>
-    </section>
+        
+    </div>
 
-    <!-- Seção de Anúncios e Transparência -->
-    <section class="announcements-section-banner">
-        <div class="section-header-banner">
-            <span class="section-icon"><i class="fas fa-bullhorn"></i></span>
-            <h2>Anúncios & Transparência</h2>
-        </div>
-
-        <div class="announcements-carousel">
-            <div class="announcements-track">
-                <div class="transparency-card">
-                    <div class="transparency-image">
-                        <img src="https://pabsystem.com/template/uploads/plugins/publicacao/febcf3665e712410d3e86cf098e94706.png" alt="Diário Oficial">
-                    </div>
-                    <div class="transparency-content">
-                        <span class="announcement-badge">Transparência</span>
-                        <h3 class="transparency-title">Diário Oficial da Corregedoria - Nº 010/2025</h3>
-                        <div class="announcement-date">
-                            <i class="far fa-calendar-alt"></i> 18 de Outubro, 2025
-                        </div>
-                    </div>
-                </div>
-
-                <div class="transparency-card">
-                    <div class="transparency-image">
-                        <img src="https://i.imgur.com/rRPqbpq.png" alt="Diário Oficial">
-                    </div>
-                    <div class="transparency-content">
-                        <span class="announcement-badge">Transparência</span>
-                        <h3 class="transparency-title">DIÁRIO OFICIAL DA POLÍCIA - Nº18/2025</h3>
-                        <div class="announcement-date">
-                            <i class="far fa-calendar-alt"></i> 12 de Outubro, 2025
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- Rodapé -->
+    <!-- Footer -->
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-content">
                 <div class="footer-section">
                     <h3><i class="fas fa-shield-alt me-2"></i>PABSystem</h3>
-                    <p style="color: rgba(255, 255, 255, 0.7); font-size: 0.9rem; line-height: 1.6;">
+                    <p style="color: var(--text-medium); font-size: 0.9rem; line-height: 1.6;">
                         Sistema oficial do Pelotão Armado Brasileiro. Gestão completa de membros, documentos e operações militares.
                     </p>
                     <div class="footer-social">
@@ -4553,10 +4814,10 @@
                 <div class="footer-section">
                     <h3><i class="fas fa-clock me-2"></i>Estatísticas</h3>
                     <ul class="footer-links">
-                        <li style="color: rgba(255, 255, 255, 0.7); pointer-events: none;">👮 1.247 Policiais</li>
-                        <li style="color: rgba(255, 255, 255, 0.7); pointer-events: none;">💰 89.542 Moedas Pagas</li>
-                        <li style="color: rgba(255, 255, 255, 0.7); pointer-events: none;">⭐ 23 Promoções Hoje</li>
-                        <li style="color: rgba(255, 255, 255, 0.7); pointer-events: none;">🎯 98.7% Uptime</li>
+                        <li style="color: var(--text-medium); pointer-events: none;">👮 1.247 Policiais</li>
+                        <li style="color: var(--text-medium); pointer-events: none;">💰 89.542 Moedas Pagas</li>
+                        <li style="color: var(--text-medium); pointer-events: none;">⭐ 23 Promoções Hoje</li>
+                        <li style="color: var(--text-medium); pointer-events: none;">🎯 98.7% Uptime</li>
                     </ul>
                 </div>
             </div>
@@ -4576,8 +4837,186 @@
         </div>
     </footer>
 
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+
+    <!-- Mobile Side Menu -->
+    <aside class="mobile-side-menu" id="mobileSideMenu">
+        <div class="mobile-menu-header">
+            <div class="mobile-menu-logo">
+                <img src="https://i.imgur.com/8ZJO8Yw_d.webp?maxwidth=760&fidelity=grand" class="mobile-menu-logo-img" alt="Logo PAB">
+                <span class="mobile-menu-logo-text">PABSystem</span>
+            </div>
+        </div>
+        
+        <ul class="mobile-nav-list">
+            <li class="mobile-nav-item">
+                <a href="#inicio" class="mobile-nav-link">
+                    <i class="fas fa-home"></i>
+                    Início
+                </a>
+            </li>
+            
+            <li class="mobile-nav-item">
+                <a href="#" class="mobile-nav-link mobile-nav-toggle">
+                    <i class="fas fa-file-alt"></i>
+                    Documentos
+                    <i class="fas fa-chevron-down mobile-nav-arrow"></i>
+                </a>
+                <ul class="mobile-submenu">
+                    <li class="mobile-submenu-item">
+                        <a href="#constituicao" class="mobile-submenu-link">
+                            <i class="fas fa-book-open"></i>
+                            Constituição
+                        </a>
+                    </li>
+                    <li class="mobile-submenu-item">
+                        <a href="#regimento" class="mobile-submenu-link">
+                            <i class="fas fa-gavel"></i>
+                            Regimento Interno
+                        </a>
+                    </li>
+                    <li class="mobile-submenu-item">
+                        <a href="#leis" class="mobile-submenu-link">
+                            <i class="fas fa-balance-scale"></i>
+                            Leis
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            
+            <li class="mobile-nav-item">
+                <a href="#" class="mobile-nav-link mobile-nav-toggle">
+                    <i class="fas fa-clipboard-list"></i>
+                    Requisições
+                    <i class="fas fa-chevron-down mobile-nav-arrow"></i>
+                </a>
+                <ul class="mobile-submenu">
+                    <li class="mobile-submenu-item">
+                        <a href="#solicitar-medalha" class="mobile-submenu-link">
+                            <i class="fas fa-medal"></i>
+                            Solicitar Medalha
+                        </a>
+                    </li>
+                    <li class="mobile-submenu-item">
+                        <a href="#abrir-chamado" class="mobile-submenu-link">
+                            <i class="fas fa-ticket-alt"></i>
+                            Abrir Chamado
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            
+            <li class="mobile-nav-item">
+                <a href="#" class="mobile-nav-link mobile-nav-toggle">
+                    <i class="fas fa-list"></i>
+                    Listagens
+                    <i class="fas fa-chevron-down mobile-nav-arrow"></i>
+                </a>
+                <ul class="mobile-submenu">
+                    <li class="mobile-submenu-item">
+                        <a href="#hierarquia" class="mobile-submenu-link">
+                            <i class="fas fa-sitemap"></i>
+                            Hierarquia
+                        </a>
+                    </li>
+                    <li class="mobile-submenu-item">
+                        <a href="#membros" class="mobile-submenu-link">
+                            <i class="fas fa-users"></i>
+                            Membros
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            
+            <li class="mobile-nav-item">
+                <a href="#" class="mobile-nav-link mobile-nav-toggle">
+                    <i class="fas fa-globe"></i>
+                    Seção Pública
+                    <i class="fas fa-chevron-down mobile-nav-arrow"></i>
+                </a>
+                <ul class="mobile-submenu">
+                    <li class="mobile-submenu-item">
+                        <a href="#noticias" class="mobile-submenu-link">
+                            <i class="fas fa-newspaper"></i>
+                            Notícias
+                        </a>
+                    </li>
+                    <li class="mobile-submenu-item">
+                        <a href="#eventos" class="mobile-submenu-link">
+                            <i class="fas fa-calendar-alt"></i>
+                            Eventos
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            
+            <li class="mobile-nav-item">
+                <a href="funcoes.html" class="mobile-nav-link">
+                    <i class="fas fa-briefcase"></i>
+                    Funções
+                </a>
+            </li>
+            
+            <li class="mobile-nav-item">
+                <a href="#" class="mobile-nav-link mobile-nav-toggle">
+                    <i class="fas fa-comments"></i>
+                    Fórum
+                    <i class="fas fa-chevron-down mobile-nav-arrow"></i>
+                </a>
+                <ul class="mobile-submenu">
+                    <li class="mobile-submenu-item">
+                        <a href="#discussoes" class="mobile-submenu-link">
+                            <i class="fas fa-comment-dots"></i>
+                            Discussões
+                        </a>
+                    </li>
+                    <li class="mobile-submenu-item">
+                        <a href="#sugestoes" class="mobile-submenu-link">
+                            <i class="fas fa-lightbulb"></i>
+                            Sugestões
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            
+            <li class="mobile-nav-item">
+                <a href="#turnos" class="mobile-nav-link">
+                    <i class="fas fa-clock"></i>
+                    Turnos
+                </a>
+            </li>
+        </ul>
+    </aside>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
+        // Dropdown Menu Functionality - Simplified
+        (function() {
+            console.log('Dropdown script loaded');
+            
+            const navItems = document.querySelectorAll('.nav-item');
+            console.log('Found nav items:', navItems.length);
+            
+            navItems.forEach((item, index) => {
+                const dropdown = item.querySelector('.dropdown-menu');
+                
+                if (dropdown) {
+                    console.log('Nav item', index, 'has dropdown');
+                    
+                    item.addEventListener('mouseenter', function() {
+                        console.log('Mouse enter on item', index);
+                        dropdown.classList.add('show');
+                    });
+                    
+                    item.addEventListener('mouseleave', function() {
+                        console.log('Mouse leave on item', index);
+                        dropdown.classList.remove('show');
+                    });
+                }
+            });
+        })();
+
         // Funcionalidade de abas
         const tabs = document.querySelectorAll('.tab');
         const tabContents = document.querySelectorAll('.tab-content');
@@ -4661,7 +5100,7 @@
             }
         });
 
-        // Funcionalidade de filtro de destaques
+        // Highlights filter functionality
         const filterBtns = document.querySelectorAll('.filter-btn');
         const highlightsData = {
             presenca: [
@@ -4729,6 +5168,65 @@
             observer.observe(item);
         });
 
+        // Menu Mobile Toggle - Versão Simples
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        const mobileSideMenu = document.getElementById('mobileSideMenu');
+        const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
+        
+        function closeMenu() {
+            mobileMenuToggle.classList.remove('active');
+            mobileSideMenu.classList.remove('active');
+            mobileMenuOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+        
+        function openMenu() {
+            mobileMenuToggle.classList.add('active');
+            mobileSideMenu.classList.add('active');
+            mobileMenuOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        if (mobileMenuToggle) {
+            mobileMenuToggle.addEventListener('click', function(e) {
+                e.preventDefault();
+                if (mobileSideMenu.classList.contains('active')) {
+                    closeMenu();
+                } else {
+                    openMenu();
+                }
+            });
+        }
+        
+        if (mobileMenuOverlay) {
+            mobileMenuOverlay.addEventListener('click', function() {
+                closeMenu();
+            });
+        }
+        
+        // Toggle submenus
+        document.querySelectorAll('.mobile-nav-toggle').forEach(function(toggle) {
+            toggle.addEventListener('click', function(e) {
+                e.preventDefault();
+                const submenu = this.parentElement.querySelector('.mobile-submenu');
+                const arrow = this.querySelector('.mobile-nav-arrow');
+                
+                if (submenu) {
+                    submenu.classList.toggle('active');
+                    if (arrow) {
+                        arrow.style.transform = submenu.classList.contains('active') ? 'rotate(180deg)' : 'rotate(0deg)';
+                    }
+                }
+            });
+        });
+        
+        // Fechar menu ao clicar em links
+        document.querySelectorAll('.mobile-submenu-link, .mobile-nav-link:not(.mobile-nav-toggle)').forEach(function(link) {
+            link.addEventListener('click', function() {
+                closeMenu();
+            });
+        });
+
         // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -4751,3 +5249,22 @@
     </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
